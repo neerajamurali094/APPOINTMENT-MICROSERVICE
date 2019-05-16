@@ -1,0 +1,24 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentTiming": {
+      "home": {
+        "title": "Timings",
+        "createLabel": "नया Timing बनाएँ",
+        "createOrEditLabel": "Timing बनाएँ या संपादित करें",
+        "search": "Timing खोजें"
+      },
+      "created": "एक नया Timing [identifier: {{ param }}] तैयार है",
+      "updated": "एक Timing [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Timing [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Timing [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Timing"
+      },
+      "day": "Day",
+      "startFrom": "Start From",
+      "endTo": "End To"
+    }
+  }
+}

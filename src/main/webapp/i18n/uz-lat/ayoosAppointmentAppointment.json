@@ -1,0 +1,31 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentAppointment": {
+      "home": {
+        "title": "Appointments",
+        "createLabel": "Yangi Appointment qo`shish",
+        "createOrEditLabel": "Appointmentni tahrirlash",
+        "search": "Appointmentni izlash"
+      },
+      "created": "Appointment {{ param }} bilan qo`shildi",
+      "updated": "{{ param }}- Appointment saqlandi",
+      "deleted": "{{ param }}- Appointment o`chirildi",
+      "delete": {
+        "question": "{{ id }}- Appointmentni o`chirmoqchimisiz? "
+      },
+      "detail": {
+        "title": "Appointment"
+      },
+      "trackingId": "Tracking Id",
+      "appointmentId": "Appointment Id",
+      "chronicDiseaseRef": "Chronic Disease Ref",
+      "appointmentDateAndTime": "Appointment Date And Time",
+      "note": "Note",
+      "patientId": "Patient Id",
+      "doctorId": "Doctor Id",
+      "consultationInfo": "Consultation Info",
+      "timing": "Timing",
+      "status": "Status"
+    }
+  }
+}

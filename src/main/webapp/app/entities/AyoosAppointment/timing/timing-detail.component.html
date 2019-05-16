@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="timing">
+            <h2><span jhiTranslate="ayoosAppointmentApp.ayoosAppointmentTiming.detail.title">Timing</span> {{timing.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ayoosAppointmentApp.ayoosAppointmentTiming.day">Day</span></dt>
+                <dd>
+                    <span>{{timing.day}}</span>
+                </dd>
+                <dt><span jhiTranslate="ayoosAppointmentApp.ayoosAppointmentTiming.startFrom">Start From</span></dt>
+                <dd>
+                    <span>{{timing.startFrom}}</span>
+                </dd>
+                <dt><span jhiTranslate="ayoosAppointmentApp.ayoosAppointmentTiming.endTo">End To</span></dt>
+                <dd>
+                    <span>{{timing.endTo}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/timing', timing.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

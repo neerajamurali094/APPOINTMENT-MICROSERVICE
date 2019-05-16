@@ -1,0 +1,24 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentTiming": {
+      "home": {
+        "title": "Timings",
+        "createLabel": "สร้าง Timing",
+        "createOrEditLabel": "สร้างหรือแก้ไข Timing",
+        "search": "ค้นหา Timing"
+      },
+      "created": "Timing ถูกสร้างด้วย {{ param }}",
+      "updated": "Timing ถูกแก้ไขด้วย {{ param }}",
+      "deleted": "Timing ถูกลบด้วย {{ param }}",
+      "delete": {
+        "question": "คุณต้องการที่จะลบ Timing {{ id }}?"
+      },
+      "detail": {
+        "title": "Timing"
+      },
+      "day": "Day",
+      "startFrom": "Start From",
+      "endTo": "End To"
+    }
+  }
+}

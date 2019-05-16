@@ -1,0 +1,31 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentAppointment": {
+      "home": {
+        "title": "Appointments",
+        "createLabel": "สร้าง Appointment",
+        "createOrEditLabel": "สร้างหรือแก้ไข Appointment",
+        "search": "ค้นหา Appointment"
+      },
+      "created": "Appointment ถูกสร้างด้วย {{ param }}",
+      "updated": "Appointment ถูกแก้ไขด้วย {{ param }}",
+      "deleted": "Appointment ถูกลบด้วย {{ param }}",
+      "delete": {
+        "question": "คุณต้องการที่จะลบ Appointment {{ id }}?"
+      },
+      "detail": {
+        "title": "Appointment"
+      },
+      "trackingId": "Tracking Id",
+      "appointmentId": "Appointment Id",
+      "chronicDiseaseRef": "Chronic Disease Ref",
+      "appointmentDateAndTime": "Appointment Date And Time",
+      "note": "Note",
+      "patientId": "Patient Id",
+      "doctorId": "Doctor Id",
+      "consultationInfo": "Consultation Info",
+      "timing": "Timing",
+      "status": "Status"
+    }
+  }
+}

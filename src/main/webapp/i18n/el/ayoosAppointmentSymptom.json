@@ -1,0 +1,24 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentSymptom": {
+      "home": {
+        "title": "Symptoms",
+        "createLabel": "Δημιουργήστε ένα νέο Symptom",
+        "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα Symptom",
+        "search": "Αναζήτηση για Symptom"
+      },
+      "created": "Ένα νέο Symptom έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+      "updated": "Ένα Symptom έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+      "deleted": "Ένα Symptom έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+      "delete": {
+        "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο Symptom {{ id }};"
+      },
+      "detail": {
+        "title": "Symptom"
+      },
+      "ref": "Ref",
+      "numberOfDaysSuffering": "Number Of Days Suffering",
+      "consultationInfo": "Consultation Info"
+    }
+  }
+}

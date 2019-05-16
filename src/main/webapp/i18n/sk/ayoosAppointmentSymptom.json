@@ -1,0 +1,24 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentSymptom": {
+      "home": {
+        "title": "Symptoms",
+        "createLabel": "Pridať Symptom",
+        "createOrEditLabel": "Pridať alebo upraviť Symptom",
+        "search": "Vyhľadať Symptom"
+      },
+      "created": "Bol vytvorený potomok entity Symptom s identifikátorom {{ param }}",
+      "updated": "Potomok entity Symptom s identifikátorom {{ param }} bol upravený.",
+      "deleted": "Potomok entity Symptom s identifikátorom {{ param }} bol vymazaný.",
+      "delete": {
+        "question": "Ste si istý, že chcete vymazať Symptom {{ id }}?"
+      },
+      "detail": {
+        "title": "Symptom"
+      },
+      "ref": "Ref",
+      "numberOfDaysSuffering": "Number Of Days Suffering",
+      "consultationInfo": "Consultation Info"
+    }
+  }
+}

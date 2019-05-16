@@ -1,0 +1,25 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentConsultationInfo": {
+      "home": {
+        "title": "Consultation Infos",
+        "createLabel": "Δημιουργήστε ένα νέο Consultation Info",
+        "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα Consultation Info",
+        "search": "Αναζήτηση για Consultation Info"
+      },
+      "created": "Ένα νέο Consultation Info έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+      "updated": "Ένα Consultation Info έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+      "deleted": "Ένα Consultation Info έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+      "delete": {
+        "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο Consultation Info {{ id }};"
+      },
+      "detail": {
+        "title": "Consultation Info"
+      },
+      "height": "Height",
+      "weight": "Weight",
+      "age": "Age",
+      "symptoms": "Symptoms"
+    }
+  }
+}

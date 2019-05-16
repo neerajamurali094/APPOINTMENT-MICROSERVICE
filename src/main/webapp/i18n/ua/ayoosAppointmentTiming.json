@@ -1,0 +1,24 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentTiming": {
+      "home": {
+        "title": "Timings",
+        "createLabel": "Створити новий Timing",
+        "createOrEditLabel": "Створити чи редагувати Timing",
+        "search": "Знайти Timing"
+      },
+      "created": "Новий Timing створений з ідентифікатором {{ param }}",
+      "updated": "Timing оновлений з ідентифікатором {{ param }}",
+      "deleted": "Timing видалений з ідентифікатором {{ param }}",
+      "delete": {
+        "question": "Ви впевнені, що хочете видалити Timing {{ id }}?"
+      },
+      "detail": {
+        "title": "Timing"
+      },
+      "day": "Day",
+      "startFrom": "Start From",
+      "endTo": "End To"
+    }
+  }
+}

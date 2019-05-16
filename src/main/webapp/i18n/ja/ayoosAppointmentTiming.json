@@ -1,0 +1,24 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentTiming": {
+      "home": {
+        "title": "Timings",
+        "createLabel": "Timing を追加",
+        "createOrEditLabel": "Timingを追加または編集",
+        "search": "Search for Timing"
+      },
+      "created": "A new Timing is created with identifier {{ param }}",
+      "updated": "A Timing is updated with identifier {{ param }}",
+      "deleted": "A Timing is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Timing {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Timing"
+      },
+      "day": "Day",
+      "startFrom": "Start From",
+      "endTo": "End To"
+    }
+  }
+}

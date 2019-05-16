@@ -1,0 +1,25 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentConsultationInfo": {
+      "home": {
+        "title": "ConsultationInfos",
+        "createLabel": "Egy új Consultation Info létrehozása",
+        "createOrEditLabel": "Hozzon létre, vagy módosítson Consultation Infot",
+        "search": "Consultation Info keresése"
+      },
+      "created": "Egy új Consultation Info lett létrehozva {{ param }} azonosítóval",
+      "updated": "A Consultation Info módosítva lett {{ param }} azonosítóval",
+      "deleted": "A Consultation Info törölve lett {{ param }} azonosítóval",
+      "delete": {
+        "question": "Biztos benne, hogy törölni szeretné az Consultation Infot {{ id }} azonosítóval?"
+      },
+      "detail": {
+        "title": "Consultation Info"
+      },
+      "height": "Height",
+      "weight": "Weight",
+      "age": "Age",
+      "symptoms": "Symptoms"
+    }
+  }
+}

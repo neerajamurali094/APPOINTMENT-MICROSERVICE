@@ -1,0 +1,25 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentConsultationInfo": {
+      "home": {
+        "title": "Consultation Infos",
+        "createLabel": "Skapa en ny Consultation Info",
+        "createOrEditLabel": "Skapa eller ändra en Consultation Info",
+        "search": "Sök efter Consultation Info"
+      },
+      "created": "En ny Consultation Info är skapad med id {{ param }}",
+      "updated": "En Consultation Info är uppdaterad med id  {{ param }}",
+      "deleted": "En Consultation Info är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Consultation Info {{ id }}?"
+      },
+      "detail": {
+        "title": "Consultation Info"
+      },
+      "height": "Height",
+      "weight": "Weight",
+      "age": "Age",
+      "symptoms": "Symptoms"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentAppointment": {
+      "home": {
+        "title": "Appointments",
+        "createLabel": "Створити новий Appointment",
+        "createOrEditLabel": "Створити чи редагувати Appointment",
+        "search": "Знайти Appointment"
+      },
+      "created": "Новий Appointment створений з ідентифікатором {{ param }}",
+      "updated": "Appointment оновлений з ідентифікатором {{ param }}",
+      "deleted": "Appointment видалений з ідентифікатором {{ param }}",
+      "delete": {
+        "question": "Ви впевнені, що хочете видалити Appointment {{ id }}?"
+      },
+      "detail": {
+        "title": "Appointment"
+      },
+      "trackingId": "Tracking Id",
+      "appointmentId": "Appointment Id",
+      "chronicDiseaseRef": "Chronic Disease Ref",
+      "appointmentDateAndTime": "Appointment Date And Time",
+      "note": "Note",
+      "patientId": "Patient Id",
+      "doctorId": "Doctor Id",
+      "consultationInfo": "Consultation Info",
+      "timing": "Timing",
+      "status": "Status"
+    }
+  }
+}

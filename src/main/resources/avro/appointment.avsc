@@ -1,0 +1,57 @@
+[
+
+  {
+	"namespace":"com.bytatech.ayoos.appointment.avro",
+	"name":"Symptom",
+	"type":"record",
+	"fields":[
+			   {"name":"ref","type":["null","string"]},
+			   {"name":"numberOfDaysSuffering","type":"int"}
+			]
+	},
+		
+		
+	{
+	"namespace":"com.bytatech.ayoos.appointment.avro",
+	"type":"record",
+	"name":"ConsultationInfo",
+	"fields":[
+		{"name":"height","type":"float"},
+		{"name":"weight","type":"float"},
+		{"name":"age","type":"int"},
+		{"name":"symptoms","type":{"type":"array","items":"com.bytatech.ayoos.appointment.avro.Symptom"}}
+		]
+},
+
+
+{
+	"namespace":"com.bytatech.ayoos.appointment.avro",
+	"type":"record",
+	"name":"Timing",
+	"fields":[
+		{"name":"day","type":"long","logicalType":"date"},
+		{"name":"startTime","type":"long","logicalType":"date"},
+		{"name":"endTime","type":"long","logicalType":"date"}	
+		]
+	},
+{
+  "namespace" : "com.bytatech.ayoos.appointment.avro",
+  "type" : "record",    
+  "name" : "Appointment",
+  "fields" : [
+    {"name":"trackingId","type":["null","string"]},
+    {"name":"appointmentId","type":["null","string"]},
+    {"name":"chronicDiseaseRef", "type":["null","string"]},
+    {"name":"appointmentDateAndTime", "type":"long","logicalType":"date"},
+    {"name":"note", "type":["null","string"]},
+    {"name":"patientId", "type":["null","string"]},
+    {"name":"doctorId","type":["null","string"]},
+    {"name":"timing","type":"com.bytatech.ayoos.appointment.avro.Timing"},
+    {"name":"consultationInfo","type":["null","com.bytatech.ayoos.appointment.avro.ConsultationInfo"]}
+    
+  ]
+    
+}
+
+
+]

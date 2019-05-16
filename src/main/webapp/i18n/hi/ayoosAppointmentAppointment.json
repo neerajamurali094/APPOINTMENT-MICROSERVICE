@@ -1,0 +1,31 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentAppointment": {
+      "home": {
+        "title": "Appointments",
+        "createLabel": "नया Appointment बनाएँ",
+        "createOrEditLabel": "Appointment बनाएँ या संपादित करें",
+        "search": "Appointment खोजें"
+      },
+      "created": "एक नया Appointment [identifier: {{ param }}] तैयार है",
+      "updated": "एक Appointment [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Appointment [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Appointment [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Appointment"
+      },
+      "trackingId": "Tracking Id",
+      "appointmentId": "Appointment Id",
+      "chronicDiseaseRef": "Chronic Disease Ref",
+      "appointmentDateAndTime": "Appointment Date And Time",
+      "note": "Note",
+      "patientId": "Patient Id",
+      "doctorId": "Doctor Id",
+      "consultationInfo": "Consultation Info",
+      "timing": "Timing",
+      "status": "Status"
+    }
+  }
+}

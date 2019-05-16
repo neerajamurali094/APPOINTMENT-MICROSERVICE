@@ -1,0 +1,25 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentConsultationInfo": {
+      "home": {
+        "title": "Consultation Infos",
+        "createLabel": "Buat Consultation Info baru",
+        "createOrEditLabel": "Buat atau edit Consultation Info",
+        "search": "Cari Consultation Info"
+      },
+      "created": "Consultation Info dengan id {{ param }} telah dibuat",
+      "updated": "Consultation Info dengan id {{ param }} telah diperbaharui",
+      "deleted": "Consultation Info dengan id {{ param }} telah dihapus",
+      "delete": {
+        "question": "Apakah anda yakin ingin menghapus Consultation Info {{ id }}?"
+      },
+      "detail": {
+        "title": "Consultation Info"
+      },
+      "height": "Height",
+      "weight": "Weight",
+      "age": "Age",
+      "symptoms": "Symptoms"
+    }
+  }
+}

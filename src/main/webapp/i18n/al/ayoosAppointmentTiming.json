@@ -1,0 +1,24 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentTiming": {
+      "home": {
+        "title": "Timings",
+        "createLabel": "Krijo një të ri Timing",
+        "createOrEditLabel": "Krijo ose përpuno një Timing",
+        "search": "Kërko për Timing"
+      },
+      "created": "Një Timing i ri u krijua me identifikues {{ param }}",
+      "updated": "Një Timing u përpunua me identifikues {{ param }}",
+      "deleted": "Një Timing u fshi me identifikues {{ param }}",
+      "delete": {
+        "question": "Jeni i sigurtë që doni të fshini Timing {{ id }}?"
+      },
+      "detail": {
+        "title": "Timing"
+      },
+      "day": "Day",
+      "startFrom": "Start From",
+      "endTo": "End To"
+    }
+  }
+}

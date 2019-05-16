@@ -1,0 +1,25 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentConsultationInfo": {
+      "home": {
+        "title": "Consultation Infos",
+        "createLabel": "Pridať Consultation Info",
+        "createOrEditLabel": "Pridať alebo upraviť Consultation Info",
+        "search": "Vyhľadať Consultation Info"
+      },
+      "created": "Bol vytvorený potomok entity Consultation Info s identifikátorom {{ param }}",
+      "updated": "Potomok entity Consultation Info s identifikátorom {{ param }} bol upravený.",
+      "deleted": "Potomok entity Consultation Info s identifikátorom {{ param }} bol vymazaný.",
+      "delete": {
+        "question": "Ste si istý, že chcete vymazať Consultation Info {{ id }}?"
+      },
+      "detail": {
+        "title": "Consultation Info"
+      },
+      "height": "Height",
+      "weight": "Weight",
+      "age": "Age",
+      "symptoms": "Symptoms"
+    }
+  }
+}

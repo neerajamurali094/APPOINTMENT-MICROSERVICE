@@ -1,0 +1,24 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentSymptom": {
+      "home": {
+        "title": "Symptoms",
+        "createLabel": "Buat Symptom baru",
+        "createOrEditLabel": "Buat atau edit Symptom",
+        "search": "Cari Symptom"
+      },
+      "created": "Symptom dengan id {{ param }} telah dibuat",
+      "updated": "Symptom dengan id {{ param }} telah diperbaharui",
+      "deleted": "Symptom dengan id {{ param }} telah dihapus",
+      "delete": {
+        "question": "Apakah anda yakin ingin menghapus Symptom {{ id }}?"
+      },
+      "detail": {
+        "title": "Symptom"
+      },
+      "ref": "Ref",
+      "numberOfDaysSuffering": "Number Of Days Suffering",
+      "consultationInfo": "Consultation Info"
+    }
+  }
+}

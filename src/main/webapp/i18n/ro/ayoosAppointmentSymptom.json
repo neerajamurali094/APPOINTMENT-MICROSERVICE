@@ -1,0 +1,24 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentSymptom": {
+      "home": {
+        "title": "Symptoms",
+        "createLabel": "Creeare o nouă entitate Symptom",
+        "createOrEditLabel": "Creeare sau editare Symptom",
+        "search": "Căutare după Symptom"
+      },
+      "created": "A fost creată o nouă entitate Symptom cu identificatorul {{ param }}",
+      "updated": "Symptom cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Symptom cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Symptom {{ id }}?"
+      },
+      "detail": {
+        "title": "Symptom"
+      },
+      "ref": "Ref",
+      "numberOfDaysSuffering": "Number Of Days Suffering",
+      "consultationInfo": "Consultation Info"
+    }
+  }
+}

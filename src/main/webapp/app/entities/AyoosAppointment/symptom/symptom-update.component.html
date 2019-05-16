@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-symptom-heading" jhiTranslate="ayoosAppointmentApp.ayoosAppointmentSymptom.home.createOrEditLabel">Create or edit a Symptom</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!symptom.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="symptom.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ayoosAppointmentApp.ayoosAppointmentSymptom.ref" for="field_ref">Ref</label>
+                    <input type="text" class="form-control" name="ref" id="field_ref"
+                        [(ngModel)]="symptom.ref" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ayoosAppointmentApp.ayoosAppointmentSymptom.numberOfDaysSuffering" for="field_numberOfDaysSuffering">Number Of Days Suffering</label>
+                    <input type="number" class="form-control" name="numberOfDaysSuffering" id="field_numberOfDaysSuffering"
+                        [(ngModel)]="symptom.numberOfDaysSuffering" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ayoosAppointmentApp.ayoosAppointmentSymptom.consultationInfo" for="field_consultationInfo">Consultation Info</label>
+                    <select class="form-control" id="field_consultationInfo" name="consultationInfo" [(ngModel)]="symptom.consultationInfoId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="consultationInfoOption.id" *ngFor="let consultationInfoOption of consultationinfos; trackBy: trackConsultationInfoById">{{consultationInfoOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentSymptom": {
+      "home": {
+        "title": "Symptoms",
+        "createLabel": "Criar um(a) novo(a) Symptom",
+        "createOrEditLabel": "Criar ou editar um(a) Symptom",
+        "search": "Search for Symptom"
+      },
+      "created": "A new Symptom is created with identifier {{ param }}",
+      "updated": "A Symptom is updated with identifier {{ param }}",
+      "deleted": "A Symptom is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Symptom {{ id }}?"
+      },
+      "detail": {
+        "title": "Symptom"
+      },
+      "ref": "Ref",
+      "numberOfDaysSuffering": "Number Of Days Suffering",
+      "consultationInfo": "Consultation Info"
+    }
+  }
+}

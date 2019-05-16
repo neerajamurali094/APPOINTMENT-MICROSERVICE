@@ -1,0 +1,31 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentAppointment": {
+      "home": {
+        "title": "Appointments",
+        "createLabel": "创建新 Appointment",
+        "createOrEditLabel": "创建或编辑 Appointment",
+        "search": "查找 Appointment"
+      },
+      "created": "Appointment {{ param }} 创建成功",
+      "updated": "Appointment {{ param }} 更新成功",
+      "deleted": "Appointment {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Appointment {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Appointment"
+      },
+      "trackingId": "Tracking Id",
+      "appointmentId": "Appointment Id",
+      "chronicDiseaseRef": "Chronic Disease Ref",
+      "appointmentDateAndTime": "Appointment Date And Time",
+      "note": "Note",
+      "patientId": "Patient Id",
+      "doctorId": "Doctor Id",
+      "consultationInfo": "Consultation Info",
+      "timing": "Timing",
+      "status": "Status"
+    }
+  }
+}

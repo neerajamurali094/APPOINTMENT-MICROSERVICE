@@ -1,0 +1,22 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentStatus": {
+      "home": {
+        "title": "Statuses",
+        "createLabel": "Criar um(a) novo(a) Status",
+        "createOrEditLabel": "Criar ou editar um(a) Status",
+        "search": "Search for Status"
+      },
+      "created": "A new Status is created with identifier {{ param }}",
+      "updated": "A Status is updated with identifier {{ param }}",
+      "deleted": "A Status is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Status {{ id }}?"
+      },
+      "detail": {
+        "title": "Status"
+      },
+      "name": "Name"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentAppointment": {
+      "home": {
+        "title": "Appointments",
+        "createLabel": "Vytvořit Appointment",
+        "createOrEditLabel": "Vytvořit nebo upravit Appointment",
+        "search": "Vyhledat Appointment"
+      },
+      "created": "Byl vytvořen potomek entity Appointment s identifikátorem {{ param }}",
+      "updated": "Potomek entity Appointment s identifikátorem {{ param }} byl upravený.",
+      "deleted": "Potomek entity Appointment s identifikátorem {{ param }} bol smazaný.",
+      "delete": {
+        "question": "Jste si jisti, že chcete smazat Appointment {{ id }}?"
+      },
+      "detail": {
+        "title": "Appointment"
+      },
+      "trackingId": "Tracking Id",
+      "appointmentId": "Appointment Id",
+      "chronicDiseaseRef": "Chronic Disease Ref",
+      "appointmentDateAndTime": "Appointment Date And Time",
+      "note": "Note",
+      "patientId": "Patient Id",
+      "doctorId": "Doctor Id",
+      "consultationInfo": "Consultation Info",
+      "timing": "Timing",
+      "status": "Status"
+    }
+  }
+}

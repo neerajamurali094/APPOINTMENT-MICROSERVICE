@@ -1,0 +1,31 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentAppointment": {
+      "home": {
+        "title": "Appointments",
+        "createLabel": "Appointment erstellen",
+        "createOrEditLabel": "Appointment erstellen oder bearbeiten",
+        "search": "Suche nach Appointment"
+      },
+      "created": "Appointment erstellt mit ID {{ param }}",
+      "updated": "Appointment aktualisiert mit ID {{ param }}",
+      "deleted": "Appointment gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Appointment {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Appointment"
+      },
+      "trackingId": "Tracking Id",
+      "appointmentId": "Appointment Id",
+      "chronicDiseaseRef": "Chronic Disease Ref",
+      "appointmentDateAndTime": "Appointment Date And Time",
+      "note": "Note",
+      "patientId": "Patient Id",
+      "doctorId": "Doctor Id",
+      "consultationInfo": "Consultation Info",
+      "timing": "Timing",
+      "status": "Status"
+    }
+  }
+}

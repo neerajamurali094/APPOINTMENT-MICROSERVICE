@@ -1,0 +1,25 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentConsultationInfo": {
+      "home": {
+        "title": "ConsultationInfos",
+        "createLabel": "नया Consultation Info बनाएँ",
+        "createOrEditLabel": "Consultation Info बनाएँ या संपादित करें",
+        "search": "Consultation Info खोजें"
+      },
+      "created": "एक नया Consultation Info [identifier: {{ param }}] तैयार है",
+      "updated": "एक Consultation Info [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Consultation Info [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Consultation Info [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Consultation Info"
+      },
+      "height": "Height",
+      "weight": "Weight",
+      "age": "Age",
+      "symptoms": "Symptoms"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+entity Appointment{
+	trackingId String,
+	appointmentId String,
+	chronicDiseaseRef String,
+	appointmentDateAndTime ZonedDateTime,
+	note String,
+	patientId String,
+	doctorId String
+}
+entity Timing{
+	day LocalDate,
+	startFrom ZonedDateTime,
+	endTo ZonedDateTime
+}
+entity ConsultationInfo{
+	
+	height Float,
+	weight Float,
+	age Integer
+}
+entity Symptom{
+	ref String,
+	numberOfDaysSuffering Integer
+}
+entity Status{
+	name String
+}
+relationship OneToOne{
+	Appointment{consultationInfo} to ConsultationInfo , Appointment{timing} to Timing
+}
+relationship ManyToOne{
+	Appointment{status} to Status
+}
+relationship OneToMany{
+	ConsultationInfo{symptoms} to Symptom
+}
+service all with serviceImpl
+dto all with mapstruct
+paginate * with pagination

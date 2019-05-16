@@ -1,0 +1,82 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-appointment-heading" jhiTranslate="ayoosAppointmentApp.ayoosAppointmentAppointment.home.createOrEditLabel">Create or edit a Appointment</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!appointment.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="appointment.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ayoosAppointmentApp.ayoosAppointmentAppointment.trackingId" for="field_trackingId">Tracking Id</label>
+                    <input type="text" class="form-control" name="trackingId" id="field_trackingId"
+                        [(ngModel)]="appointment.trackingId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ayoosAppointmentApp.ayoosAppointmentAppointment.appointmentId" for="field_appointmentId">Appointment Id</label>
+                    <input type="text" class="form-control" name="appointmentId" id="field_appointmentId"
+                        [(ngModel)]="appointment.appointmentId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ayoosAppointmentApp.ayoosAppointmentAppointment.chronicDiseaseRef" for="field_chronicDiseaseRef">Chronic Disease Ref</label>
+                    <input type="text" class="form-control" name="chronicDiseaseRef" id="field_chronicDiseaseRef"
+                        [(ngModel)]="appointment.chronicDiseaseRef" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ayoosAppointmentApp.ayoosAppointmentAppointment.appointmentDateAndTime" for="field_appointmentDateAndTime">Appointment Date And Time</label>
+                    <div class="d-flex">
+                        <input id="field_appointmentDateAndTime" type="datetime-local" class="form-control" name="appointmentDateAndTime" [(ngModel)]="appointmentDateAndTime"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ayoosAppointmentApp.ayoosAppointmentAppointment.note" for="field_note">Note</label>
+                    <input type="text" class="form-control" name="note" id="field_note"
+                        [(ngModel)]="appointment.note" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ayoosAppointmentApp.ayoosAppointmentAppointment.patientId" for="field_patientId">Patient Id</label>
+                    <input type="text" class="form-control" name="patientId" id="field_patientId"
+                        [(ngModel)]="appointment.patientId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ayoosAppointmentApp.ayoosAppointmentAppointment.doctorId" for="field_doctorId">Doctor Id</label>
+                    <input type="text" class="form-control" name="doctorId" id="field_doctorId"
+                        [(ngModel)]="appointment.doctorId" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ayoosAppointmentApp.ayoosAppointmentAppointment.consultationInfo" for="field_consultationInfo">Consultation Info</label>
+                    <select class="form-control" id="field_consultationInfo" name="consultationInfo" [(ngModel)]="appointment.consultationInfoId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="consultationInfoOption.id" *ngFor="let consultationInfoOption of consultationinfos; trackBy: trackConsultationInfoById">{{consultationInfoOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ayoosAppointmentApp.ayoosAppointmentAppointment.timing" for="field_timing">Timing</label>
+                    <select class="form-control" id="field_timing" name="timing" [(ngModel)]="appointment.timingId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="timingOption.id" *ngFor="let timingOption of timings; trackBy: trackTimingById">{{timingOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ayoosAppointmentApp.ayoosAppointmentAppointment.status" for="field_status">Status</label>
+                    <select class="form-control" id="field_status" name="status" [(ngModel)]="appointment.statusId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="statusOption.id" *ngFor="let statusOption of statuses; trackBy: trackStatusById">{{statusOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentTiming": {
+      "home": {
+        "title": "Timings",
+        "createLabel": "建立一筆新的 Timing",
+        "createOrEditLabel": "建立或編輯 Timing",
+        "search": "搜尋 Timing"
+      },
+      "created": "新的 Timing 建立成功，識別碼為 {{ param }}",
+      "updated": "識別碼為 {{ param }} 的 Timing 更新成功",
+      "deleted": "識別碼為 {{ param }} 的 Timing 刪除成功",
+      "delete": {
+        "question": "您確定要刪除 Timing {{ id }} 嗎?"
+      },
+      "detail": {
+        "title": "Timing"
+      },
+      "day": "Day",
+      "startFrom": "Start From",
+      "endTo": "End To"
+    }
+  }
+}

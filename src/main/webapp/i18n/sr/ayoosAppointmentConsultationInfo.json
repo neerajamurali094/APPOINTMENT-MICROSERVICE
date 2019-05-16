@@ -1,0 +1,25 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentConsultationInfo": {
+      "home": {
+        "title": "Consultation Infos",
+        "createLabel": "Kreiraj novi Consultation Info",
+        "createOrEditLabel": "Kreirajte ili izmenite Consultation Info",
+        "search": "Potražite Consultation Info"
+      },
+      "created": "Kreiran je novi Consultation Info pod nazivom {{ param }}",
+      "updated": "Consultation Info pod nazivom {{ param }} je ažuriran",
+      "deleted": "Consultation Info pod nazivom {{ param }} je obrisan",
+      "delete": {
+        "question": "Da li ste sigurni da želite da obrišete Consultation Info pod nazivom {{ id }}?"
+      },
+      "detail": {
+        "title": "Consultation Info"
+      },
+      "height": "Height",
+      "weight": "Weight",
+      "age": "Age",
+      "symptoms": "Symptoms"
+    }
+  }
+}

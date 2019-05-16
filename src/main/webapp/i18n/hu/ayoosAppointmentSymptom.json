@@ -1,0 +1,24 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentSymptom": {
+      "home": {
+        "title": "Symptoms",
+        "createLabel": "Egy új Symptom létrehozása",
+        "createOrEditLabel": "Hozzon létre, vagy módosítson Symptomt",
+        "search": "Symptom keresése"
+      },
+      "created": "Egy új Symptom lett létrehozva {{ param }} azonosítóval",
+      "updated": "A Symptom módosítva lett {{ param }} azonosítóval",
+      "deleted": "A Symptom törölve lett {{ param }} azonosítóval",
+      "delete": {
+        "question": "Biztos benne, hogy törölni szeretné az Symptomt {{ id }} azonosítóval?"
+      },
+      "detail": {
+        "title": "Symptom"
+      },
+      "ref": "Ref",
+      "numberOfDaysSuffering": "Number Of Days Suffering",
+      "consultationInfo": "Consultation Info"
+    }
+  }
+}

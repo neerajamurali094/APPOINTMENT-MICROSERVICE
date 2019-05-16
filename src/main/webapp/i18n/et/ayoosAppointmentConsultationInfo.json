@@ -1,0 +1,25 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentConsultationInfo": {
+      "home": {
+        "title": "Consultation Infos",
+        "createLabel": "Lisa uus Consultation Info",
+        "createOrEditLabel": "Lisa või muuda Consultation Info",
+        "search": "Otsi Consultation Info"
+      },
+      "created": "Uus Consultation Info on loodud identifikaatoriga {{ param }}",
+      "updated": "Consultation Info identifikaatoriga {{ param }} on muudetud",
+      "deleted": "Consultation Info identifikaatoriga {{ param }} on kustutatud",
+      "delete": {
+        "question": "Kas olete kindel, et soovite kustutada Consultation Info {{ id }}?"
+      },
+      "detail": {
+        "title": "Consultation Info"
+      },
+      "height": "Height",
+      "weight": "Weight",
+      "age": "Age",
+      "symptoms": "Symptoms"
+    }
+  }
+}

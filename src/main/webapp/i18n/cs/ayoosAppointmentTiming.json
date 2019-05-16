@@ -1,0 +1,24 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentTiming": {
+      "home": {
+        "title": "Timings",
+        "createLabel": "Vytvořit Timing",
+        "createOrEditLabel": "Vytvořit nebo upravit Timing",
+        "search": "Vyhledat Timing"
+      },
+      "created": "Byl vytvořen potomek entity Timing s identifikátorem {{ param }}",
+      "updated": "Potomek entity Timing s identifikátorem {{ param }} byl upravený.",
+      "deleted": "Potomek entity Timing s identifikátorem {{ param }} bol smazaný.",
+      "delete": {
+        "question": "Jste si jisti, že chcete smazat Timing {{ id }}?"
+      },
+      "detail": {
+        "title": "Timing"
+      },
+      "day": "Day",
+      "startFrom": "Start From",
+      "endTo": "End To"
+    }
+  }
+}

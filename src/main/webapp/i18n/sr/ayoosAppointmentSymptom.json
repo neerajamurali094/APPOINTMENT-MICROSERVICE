@@ -1,0 +1,24 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentSymptom": {
+      "home": {
+        "title": "Symptoms",
+        "createLabel": "Kreiraj novi Symptom",
+        "createOrEditLabel": "Kreirajte ili izmenite Symptom",
+        "search": "Potražite Symptom"
+      },
+      "created": "Kreiran je novi Symptom pod nazivom {{ param }}",
+      "updated": "Symptom pod nazivom {{ param }} je ažuriran",
+      "deleted": "Symptom pod nazivom {{ param }} je obrisan",
+      "delete": {
+        "question": "Da li ste sigurni da želite da obrišete Symptom pod nazivom {{ id }}?"
+      },
+      "detail": {
+        "title": "Symptom"
+      },
+      "ref": "Ref",
+      "numberOfDaysSuffering": "Number Of Days Suffering",
+      "consultationInfo": "Consultation Info"
+    }
+  }
+}

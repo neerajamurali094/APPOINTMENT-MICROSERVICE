@@ -1,0 +1,24 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentTiming": {
+      "home": {
+        "title": "Timings",
+        "createLabel": "Creeare o nouă entitate Timing",
+        "createOrEditLabel": "Creeare sau editare Timing",
+        "search": "Căutare după Timing"
+      },
+      "created": "A fost creată o nouă entitate Timing cu identificatorul {{ param }}",
+      "updated": "Timing cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Timing cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Timing {{ id }}?"
+      },
+      "detail": {
+        "title": "Timing"
+      },
+      "day": "Day",
+      "startFrom": "Start From",
+      "endTo": "End To"
+    }
+  }
+}

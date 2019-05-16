@@ -1,0 +1,24 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentSymptom": {
+      "home": {
+        "title": "Symptoms",
+        "createLabel": "Krijo një të ri Symptom",
+        "createOrEditLabel": "Krijo ose përpuno një Symptom",
+        "search": "Kërko për Symptom"
+      },
+      "created": "Një Symptom i ri u krijua me identifikues {{ param }}",
+      "updated": "Një Symptom u përpunua me identifikues {{ param }}",
+      "deleted": "Një Symptom u fshi me identifikues {{ param }}",
+      "delete": {
+        "question": "Jeni i sigurtë që doni të fshini Symptom {{ id }}?"
+      },
+      "detail": {
+        "title": "Symptom"
+      },
+      "ref": "Ref",
+      "numberOfDaysSuffering": "Number Of Days Suffering",
+      "consultationInfo": "Consultation Info"
+    }
+  }
+}

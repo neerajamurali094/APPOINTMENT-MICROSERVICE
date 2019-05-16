@@ -1,0 +1,25 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentConsultationInfo": {
+      "home": {
+        "title": "Consultation Infos",
+        "createLabel": "Yangi Consultation Info qo`shish",
+        "createOrEditLabel": "Consultation Infoni tahrirlash",
+        "search": "Consultation Infoni izlash"
+      },
+      "created": "Consultation Info {{ param }} bilan qo`shildi",
+      "updated": "{{ param }}- Consultation Info saqlandi",
+      "deleted": "{{ param }}- Consultation Info o`chirildi",
+      "delete": {
+        "question": "{{ id }}- Consultation Infoni o`chirmoqchimisiz? "
+      },
+      "detail": {
+        "title": "Consultation Info"
+      },
+      "height": "Height",
+      "weight": "Weight",
+      "age": "Age",
+      "symptoms": "Symptoms"
+    }
+  }
+}

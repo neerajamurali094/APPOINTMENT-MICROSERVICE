@@ -1,0 +1,25 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentConsultationInfo": {
+      "home": {
+        "title": "Consultation Infos",
+        "createLabel": "Thêm mới một Consultation Info",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Consultation Info",
+        "search": "Tìm Consultation Info"
+      },
+      "created": "Một Consultation Info mới được tạo với định danh {{ param }}",
+      "updated": "Một Consultation Info cập nhật với định danh {{ param }}",
+      "deleted": "Một Consultation Info đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Consultation Info {{ id }}?"
+      },
+      "detail": {
+        "title": "Consultation Info"
+      },
+      "height": "Height",
+      "weight": "Weight",
+      "age": "Age",
+      "symptoms": "Symptoms"
+    }
+  }
+}

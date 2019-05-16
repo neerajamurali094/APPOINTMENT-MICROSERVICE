@@ -1,0 +1,25 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentConsultationInfo": {
+      "home": {
+        "title": "ConsultationInfos",
+        "createLabel": "Genera un nuovo Consultation Info",
+        "createOrEditLabel": "Genera o modifica un Consultation Info",
+        "search": "Cerca Consultation Info"
+      },
+      "created": "&Egrave; stato generato un nuovo Consultation Info con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Consultation Info identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Consultation Info con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Consultation Info {{ id }}?"
+      },
+      "detail": {
+        "title": "Consultation Info"
+      },
+      "height": "Height",
+      "weight": "Weight",
+      "age": "Age",
+      "symptoms": "Symptoms"
+    }
+  }
+}

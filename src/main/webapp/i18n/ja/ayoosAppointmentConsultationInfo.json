@@ -1,0 +1,25 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentConsultationInfo": {
+      "home": {
+        "title": "ConsultationInfos",
+        "createLabel": "Consultation Info を追加",
+        "createOrEditLabel": "Consultation Infoを追加または編集",
+        "search": "Search for Consultation Info"
+      },
+      "created": "A new Consultation Info is created with identifier {{ param }}",
+      "updated": "A Consultation Info is updated with identifier {{ param }}",
+      "deleted": "A Consultation Info is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Consultation Info {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Consultation Info"
+      },
+      "height": "Height",
+      "weight": "Weight",
+      "age": "Age",
+      "symptoms": "Symptoms"
+    }
+  }
+}

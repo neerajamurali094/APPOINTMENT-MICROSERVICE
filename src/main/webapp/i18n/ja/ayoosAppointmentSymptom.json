@@ -1,0 +1,24 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentSymptom": {
+      "home": {
+        "title": "Symptoms",
+        "createLabel": "Symptom を追加",
+        "createOrEditLabel": "Symptomを追加または編集",
+        "search": "Search for Symptom"
+      },
+      "created": "A new Symptom is created with identifier {{ param }}",
+      "updated": "A Symptom is updated with identifier {{ param }}",
+      "deleted": "A Symptom is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Symptom {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Symptom"
+      },
+      "ref": "Ref",
+      "numberOfDaysSuffering": "Number Of Days Suffering",
+      "consultationInfo": "Consultation Info"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentTiming": {
+      "home": {
+        "title": "Timings",
+        "createLabel": "Egy új Timing létrehozása",
+        "createOrEditLabel": "Hozzon létre, vagy módosítson Timingt",
+        "search": "Timing keresése"
+      },
+      "created": "Egy új Timing lett létrehozva {{ param }} azonosítóval",
+      "updated": "A Timing módosítva lett {{ param }} azonosítóval",
+      "deleted": "A Timing törölve lett {{ param }} azonosítóval",
+      "delete": {
+        "question": "Biztos benne, hogy törölni szeretné az Timingt {{ id }} azonosítóval?"
+      },
+      "detail": {
+        "title": "Timing"
+      },
+      "day": "Day",
+      "startFrom": "Start From",
+      "endTo": "End To"
+    }
+  }
+}

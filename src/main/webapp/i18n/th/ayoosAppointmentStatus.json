@@ -1,0 +1,22 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentStatus": {
+      "home": {
+        "title": "Statuses",
+        "createLabel": "สร้าง Status",
+        "createOrEditLabel": "สร้างหรือแก้ไข Status",
+        "search": "ค้นหา Status"
+      },
+      "created": "Status ถูกสร้างด้วย {{ param }}",
+      "updated": "Status ถูกแก้ไขด้วย {{ param }}",
+      "deleted": "Status ถูกลบด้วย {{ param }}",
+      "delete": {
+        "question": "คุณต้องการที่จะลบ Status {{ id }}?"
+      },
+      "detail": {
+        "title": "Status"
+      },
+      "name": "Name"
+    }
+  }
+}

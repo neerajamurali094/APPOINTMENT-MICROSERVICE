@@ -1,0 +1,31 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentAppointment": {
+      "home": {
+        "title": "Appointment",
+        "createLabel": "Dodaj Appointment",
+        "createOrEditLabel": "Dodaj lub edytuj: Appointment",
+        "search": "Szukaj Appointment"
+      },
+      "created": "Utworzono nowy obiekt typu Appointment z identyfikatorem {{ param }}",
+      "updated": "Uaktualniono obiekt typu Appointment z identyfikatorem {{ param }}",
+      "deleted": "Usunięto obiekt typu Appointment z identyfikatorem {{ param }}",
+      "delete": {
+        "question": "Czy na pewno chcesz usunąć Appointment {{ id }}?"
+      },
+      "detail": {
+        "title": "Appointment"
+      },
+      "trackingId": "Tracking Id",
+      "appointmentId": "Appointment Id",
+      "chronicDiseaseRef": "Chronic Disease Ref",
+      "appointmentDateAndTime": "Appointment Date And Time",
+      "note": "Note",
+      "patientId": "Patient Id",
+      "doctorId": "Doctor Id",
+      "consultationInfo": "Consultation Info",
+      "timing": "Timing",
+      "status": "Status"
+    }
+  }
+}

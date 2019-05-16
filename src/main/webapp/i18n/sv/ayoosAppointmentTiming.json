@@ -1,0 +1,24 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentTiming": {
+      "home": {
+        "title": "Timings",
+        "createLabel": "Skapa en ny Timing",
+        "createOrEditLabel": "Skapa eller ändra en Timing",
+        "search": "Sök efter Timing"
+      },
+      "created": "En ny Timing är skapad med id {{ param }}",
+      "updated": "En Timing är uppdaterad med id  {{ param }}",
+      "deleted": "En Timing är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Timing {{ id }}?"
+      },
+      "detail": {
+        "title": "Timing"
+      },
+      "day": "Day",
+      "startFrom": "Start From",
+      "endTo": "End To"
+    }
+  }
+}

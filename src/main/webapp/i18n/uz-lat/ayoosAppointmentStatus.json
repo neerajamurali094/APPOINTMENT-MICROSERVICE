@@ -1,0 +1,22 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentStatus": {
+      "home": {
+        "title": "Statuses",
+        "createLabel": "Yangi Status qo`shish",
+        "createOrEditLabel": "Statusni tahrirlash",
+        "search": "Statusni izlash"
+      },
+      "created": "Status {{ param }} bilan qo`shildi",
+      "updated": "{{ param }}- Status saqlandi",
+      "deleted": "{{ param }}- Status o`chirildi",
+      "delete": {
+        "question": "{{ id }}- Statusni o`chirmoqchimisiz? "
+      },
+      "detail": {
+        "title": "Status"
+      },
+      "name": "Name"
+    }
+  }
+}

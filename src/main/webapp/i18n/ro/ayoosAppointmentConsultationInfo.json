@@ -1,0 +1,25 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentConsultationInfo": {
+      "home": {
+        "title": "Consultation Infos",
+        "createLabel": "Creeare o nouă entitate Consultation Info",
+        "createOrEditLabel": "Creeare sau editare Consultation Info",
+        "search": "Căutare după Consultation Info"
+      },
+      "created": "A fost creată o nouă entitate Consultation Info cu identificatorul {{ param }}",
+      "updated": "Consultation Info cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Consultation Info cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Consultation Info {{ id }}?"
+      },
+      "detail": {
+        "title": "Consultation Info"
+      },
+      "height": "Height",
+      "weight": "Weight",
+      "age": "Age",
+      "symptoms": "Symptoms"
+    }
+  }
+}

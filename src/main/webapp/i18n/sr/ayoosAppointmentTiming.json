@@ -1,0 +1,24 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentTiming": {
+      "home": {
+        "title": "Timings",
+        "createLabel": "Kreiraj novi Timing",
+        "createOrEditLabel": "Kreirajte ili izmenite Timing",
+        "search": "Potražite Timing"
+      },
+      "created": "Kreiran je novi Timing pod nazivom {{ param }}",
+      "updated": "Timing pod nazivom {{ param }} je ažuriran",
+      "deleted": "Timing pod nazivom {{ param }} je obrisan",
+      "delete": {
+        "question": "Da li ste sigurni da želite da obrišete Timing pod nazivom {{ id }}?"
+      },
+      "detail": {
+        "title": "Timing"
+      },
+      "day": "Day",
+      "startFrom": "Start From",
+      "endTo": "End To"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentTiming": {
+      "home": {
+        "title": "Timings",
+        "createLabel": "Lisa uus Timing",
+        "createOrEditLabel": "Lisa või muuda Timing",
+        "search": "Otsi Timing"
+      },
+      "created": "Uus Timing on loodud identifikaatoriga {{ param }}",
+      "updated": "Timing identifikaatoriga {{ param }} on muudetud",
+      "deleted": "Timing identifikaatoriga {{ param }} on kustutatud",
+      "delete": {
+        "question": "Kas olete kindel, et soovite kustutada Timing {{ id }}?"
+      },
+      "detail": {
+        "title": "Timing"
+      },
+      "day": "Day",
+      "startFrom": "Start From",
+      "endTo": "End To"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentSymptom": {
+      "home": {
+        "title": "Symptoms",
+        "createLabel": "สร้าง Symptom",
+        "createOrEditLabel": "สร้างหรือแก้ไข Symptom",
+        "search": "ค้นหา Symptom"
+      },
+      "created": "Symptom ถูกสร้างด้วย {{ param }}",
+      "updated": "Symptom ถูกแก้ไขด้วย {{ param }}",
+      "deleted": "Symptom ถูกลบด้วย {{ param }}",
+      "delete": {
+        "question": "คุณต้องการที่จะลบ Symptom {{ id }}?"
+      },
+      "detail": {
+        "title": "Symptom"
+      },
+      "ref": "Ref",
+      "numberOfDaysSuffering": "Number Of Days Suffering",
+      "consultationInfo": "Consultation Info"
+    }
+  }
+}

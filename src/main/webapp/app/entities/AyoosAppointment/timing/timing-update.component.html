@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-timing-heading" jhiTranslate="ayoosAppointmentApp.ayoosAppointmentTiming.home.createOrEditLabel">Create or edit a Timing</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!timing.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="timing.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ayoosAppointmentApp.ayoosAppointmentTiming.day" for="field_day">Day</label>
+                    <div class="input-group">
+                        <input id="field_day" type="text" class="form-control" name="day" ngbDatepicker  #dayDp="ngbDatepicker" [(ngModel)]="timing.day"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dayDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ayoosAppointmentApp.ayoosAppointmentTiming.startFrom" for="field_startFrom">Start From</label>
+                    <div class="d-flex">
+                        <input id="field_startFrom" type="datetime-local" class="form-control" name="startFrom" [(ngModel)]="startFrom"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ayoosAppointmentApp.ayoosAppointmentTiming.endTo" for="field_endTo">End To</label>
+                    <div class="d-flex">
+                        <input id="field_endTo" type="datetime-local" class="form-control" name="endTo" [(ngModel)]="endTo"
+                        />
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

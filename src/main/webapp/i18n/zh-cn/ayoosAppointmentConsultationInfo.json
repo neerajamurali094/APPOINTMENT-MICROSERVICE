@@ -1,0 +1,25 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentConsultationInfo": {
+      "home": {
+        "title": "Consultation Infos",
+        "createLabel": "创建新 Consultation Info",
+        "createOrEditLabel": "创建或编辑 Consultation Info",
+        "search": "查找 Consultation Info"
+      },
+      "created": "Consultation Info {{ param }} 创建成功",
+      "updated": "Consultation Info {{ param }} 更新成功",
+      "deleted": "Consultation Info {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Consultation Info {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Consultation Info"
+      },
+      "height": "Height",
+      "weight": "Weight",
+      "age": "Age",
+      "symptoms": "Symptoms"
+    }
+  }
+}

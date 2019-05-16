@@ -1,0 +1,24 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentTiming": {
+      "home": {
+        "title": "Timings",
+        "createLabel": "Yangi Timing qo`shish",
+        "createOrEditLabel": "Timingni tahrirlash",
+        "search": "Timingni izlash"
+      },
+      "created": "Timing {{ param }} bilan qo`shildi",
+      "updated": "{{ param }}- Timing saqlandi",
+      "deleted": "{{ param }}- Timing o`chirildi",
+      "delete": {
+        "question": "{{ id }}- Timingni o`chirmoqchimisiz? "
+      },
+      "detail": {
+        "title": "Timing"
+      },
+      "day": "Day",
+      "startFrom": "Start From",
+      "endTo": "End To"
+    }
+  }
+}

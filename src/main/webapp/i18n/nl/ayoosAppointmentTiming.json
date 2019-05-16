@@ -1,0 +1,24 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentTiming": {
+      "home": {
+        "title": "Timings",
+        "createLabel": "Maak een nieuwe Timing",
+        "createOrEditLabel": "Maak of wijzig een Timing",
+        "search": "Search for Timing"
+      },
+      "created": "A new Timing is created with identifier {{ param }}",
+      "updated": "A Timing is updated with identifier {{ param }}",
+      "deleted": "A Timing is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u Timing {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "Timing"
+      },
+      "day": "Day",
+      "startFrom": "Start From",
+      "endTo": "End To"
+    }
+  }
+}

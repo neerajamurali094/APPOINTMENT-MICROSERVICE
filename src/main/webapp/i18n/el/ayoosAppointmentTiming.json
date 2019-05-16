@@ -1,0 +1,24 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentTiming": {
+      "home": {
+        "title": "Timings",
+        "createLabel": "Δημιουργήστε ένα νέο Timing",
+        "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα Timing",
+        "search": "Αναζήτηση για Timing"
+      },
+      "created": "Ένα νέο Timing έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+      "updated": "Ένα Timing έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+      "deleted": "Ένα Timing έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+      "delete": {
+        "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο Timing {{ id }};"
+      },
+      "detail": {
+        "title": "Timing"
+      },
+      "day": "Day",
+      "startFrom": "Start From",
+      "endTo": "End To"
+    }
+  }
+}

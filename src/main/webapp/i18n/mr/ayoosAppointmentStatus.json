@@ -1,0 +1,22 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentStatus": {
+      "home": {
+        "title": "Statuses",
+        "createLabel": "नवीन Status तयार करा",
+        "createOrEditLabel": "Status तयार किंवा संपादित करा",
+        "search": "Status शोधा"
+      },
+      "created": "Status [identifier: {{ param }}] तयार आहे",
+      "updated": "Status [identifier: {{ param }}] सुधारित केले आहे",
+      "deleted": "Status [identifier: {{ param }}] हटविले आहे",
+      "delete": {
+        "question": "Status [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+      },
+      "detail": {
+        "title": "Status"
+      },
+      "name": "Name"
+    }
+  }
+}

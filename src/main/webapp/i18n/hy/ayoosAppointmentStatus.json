@@ -1,0 +1,22 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentStatus": {
+      "home": {
+        "title": "Statuses",
+        "createLabel": "Ստեղծել նոր Status",
+        "createOrEditLabel": "Ստեղծել կամ փոփոխել Status",
+        "search": "Գտնել Status"
+      },
+      "created": "Նոր Status ստեղծված է {{ param }} նունացուցիչով",
+      "updated": "Status թարմացվաց է {{ param }} նունացուցիչով",
+      "deleted": "Status հեռացված է {{ param }}  նունացուցիչով",
+      "delete": {
+        "question": "Դուք վստահ ե՞ք, որ ցանկանում եք հեռացնել Status {{ id }}?"
+      },
+      "detail": {
+        "title": "Status"
+      },
+      "name": "Name"
+    }
+  }
+}

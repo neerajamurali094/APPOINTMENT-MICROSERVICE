@@ -1,0 +1,24 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentSymptom": {
+      "home": {
+        "title": "Symptoms",
+        "createLabel": "Стварыць новы Symptom",
+        "createOrEditLabel": "Стварыць або адрэдагаваць Symptom",
+        "search": "Знайсці Symptom"
+      },
+      "created": "Новы Symptom створан з ідэнтыфікатарам {{ param }}",
+      "updated": "Symptom абноўлен з ідэнтыфікатарам {{ param }}",
+      "deleted": "Symptom выдален з ідэнтыфікатарам {{ param }}",
+      "delete": {
+        "question": "Вы ўпэўнены, што жадаеце выдаліць Symptom {{ id }}?"
+      },
+      "detail": {
+        "title": "Symptom"
+      },
+      "ref": "Ref",
+      "numberOfDaysSuffering": "Number Of Days Suffering",
+      "consultationInfo": "Consultation Info"
+    }
+  }
+}

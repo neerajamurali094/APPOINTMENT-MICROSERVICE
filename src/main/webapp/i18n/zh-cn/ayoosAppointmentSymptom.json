@@ -1,0 +1,24 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentSymptom": {
+      "home": {
+        "title": "Symptoms",
+        "createLabel": "创建新 Symptom",
+        "createOrEditLabel": "创建或编辑 Symptom",
+        "search": "查找 Symptom"
+      },
+      "created": "Symptom {{ param }} 创建成功",
+      "updated": "Symptom {{ param }} 更新成功",
+      "deleted": "Symptom {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Symptom {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Symptom"
+      },
+      "ref": "Ref",
+      "numberOfDaysSuffering": "Number Of Days Suffering",
+      "consultationInfo": "Consultation Info"
+    }
+  }
+}

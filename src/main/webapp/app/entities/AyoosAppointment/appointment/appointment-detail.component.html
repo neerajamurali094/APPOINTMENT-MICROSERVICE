@@ -1,0 +1,69 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="appointment">
+            <h2><span jhiTranslate="ayoosAppointmentApp.ayoosAppointmentAppointment.detail.title">Appointment</span> {{appointment.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ayoosAppointmentApp.ayoosAppointmentAppointment.trackingId">Tracking Id</span></dt>
+                <dd>
+                    <span>{{appointment.trackingId}}</span>
+                </dd>
+                <dt><span jhiTranslate="ayoosAppointmentApp.ayoosAppointmentAppointment.appointmentId">Appointment Id</span></dt>
+                <dd>
+                    <span>{{appointment.appointmentId}}</span>
+                </dd>
+                <dt><span jhiTranslate="ayoosAppointmentApp.ayoosAppointmentAppointment.chronicDiseaseRef">Chronic Disease Ref</span></dt>
+                <dd>
+                    <span>{{appointment.chronicDiseaseRef}}</span>
+                </dd>
+                <dt><span jhiTranslate="ayoosAppointmentApp.ayoosAppointmentAppointment.appointmentDateAndTime">Appointment Date And Time</span></dt>
+                <dd>
+                    <span>{{appointment.appointmentDateAndTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="ayoosAppointmentApp.ayoosAppointmentAppointment.note">Note</span></dt>
+                <dd>
+                    <span>{{appointment.note}}</span>
+                </dd>
+                <dt><span jhiTranslate="ayoosAppointmentApp.ayoosAppointmentAppointment.patientId">Patient Id</span></dt>
+                <dd>
+                    <span>{{appointment.patientId}}</span>
+                </dd>
+                <dt><span jhiTranslate="ayoosAppointmentApp.ayoosAppointmentAppointment.doctorId">Doctor Id</span></dt>
+                <dd>
+                    <span>{{appointment.doctorId}}</span>
+                </dd>
+                <dt><span jhiTranslate="ayoosAppointmentApp.ayoosAppointmentAppointment.consultationInfo">Consultation Info</span></dt>
+                <dd>
+                    <div *ngIf="appointment.consultationInfoId">
+                        <a [routerLink]="['/consultation-info', appointment.consultationInfoId, 'view']">{{appointment.consultationInfoId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="ayoosAppointmentApp.ayoosAppointmentAppointment.timing">Timing</span></dt>
+                <dd>
+                    <div *ngIf="appointment.timingId">
+                        <a [routerLink]="['/timing', appointment.timingId, 'view']">{{appointment.timingId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="ayoosAppointmentApp.ayoosAppointmentAppointment.status">Status</span></dt>
+                <dd>
+                    <div *ngIf="appointment.statusId">
+                        <a [routerLink]="['/status', appointment.statusId, 'view']">{{appointment.statusId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/appointment', appointment.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

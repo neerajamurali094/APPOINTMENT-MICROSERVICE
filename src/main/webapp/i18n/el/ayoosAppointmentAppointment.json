@@ -1,0 +1,31 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentAppointment": {
+      "home": {
+        "title": "Appointments",
+        "createLabel": "Δημιουργήστε ένα νέο Appointment",
+        "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα Appointment",
+        "search": "Αναζήτηση για Appointment"
+      },
+      "created": "Ένα νέο Appointment έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+      "updated": "Ένα Appointment έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+      "deleted": "Ένα Appointment έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+      "delete": {
+        "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο Appointment {{ id }};"
+      },
+      "detail": {
+        "title": "Appointment"
+      },
+      "trackingId": "Tracking Id",
+      "appointmentId": "Appointment Id",
+      "chronicDiseaseRef": "Chronic Disease Ref",
+      "appointmentDateAndTime": "Appointment Date And Time",
+      "note": "Note",
+      "patientId": "Patient Id",
+      "doctorId": "Doctor Id",
+      "consultationInfo": "Consultation Info",
+      "timing": "Timing",
+      "status": "Status"
+    }
+  }
+}

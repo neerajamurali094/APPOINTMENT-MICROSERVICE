@@ -1,0 +1,24 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentTiming": {
+      "home": {
+        "title": "Timings",
+        "createLabel": "Genera un nuovo Timing",
+        "createOrEditLabel": "Genera o modifica un Timing",
+        "search": "Cerca Timing"
+      },
+      "created": "&Egrave; stato generato un nuovo Timing con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Timing identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Timing con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Timing {{ id }}?"
+      },
+      "detail": {
+        "title": "Timing"
+      },
+      "day": "Day",
+      "startFrom": "Start From",
+      "endTo": "End To"
+    }
+  }
+}

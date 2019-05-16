@@ -1,0 +1,24 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentSymptom": {
+      "home": {
+        "title": "Symptoms",
+        "createLabel": "Yangi Symptom qo`shish",
+        "createOrEditLabel": "Symptomni tahrirlash",
+        "search": "Symptomni izlash"
+      },
+      "created": "Symptom {{ param }} bilan qo`shildi",
+      "updated": "{{ param }}- Symptom saqlandi",
+      "deleted": "{{ param }}- Symptom o`chirildi",
+      "delete": {
+        "question": "{{ id }}- Symptomni o`chirmoqchimisiz? "
+      },
+      "detail": {
+        "title": "Symptom"
+      },
+      "ref": "Ref",
+      "numberOfDaysSuffering": "Number Of Days Suffering",
+      "consultationInfo": "Consultation Info"
+    }
+  }
+}

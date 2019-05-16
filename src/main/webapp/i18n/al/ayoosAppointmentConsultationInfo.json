@@ -1,0 +1,25 @@
+{
+  "ayoosAppointmentApp": {
+    "ayoosAppointmentConsultationInfo": {
+      "home": {
+        "title": "Consultation Infos",
+        "createLabel": "Krijo një të ri Consultation Info",
+        "createOrEditLabel": "Krijo ose përpuno një Consultation Info",
+        "search": "Kërko për Consultation Info"
+      },
+      "created": "Një Consultation Info i ri u krijua me identifikues {{ param }}",
+      "updated": "Një Consultation Info u përpunua me identifikues {{ param }}",
+      "deleted": "Një Consultation Info u fshi me identifikues {{ param }}",
+      "delete": {
+        "question": "Jeni i sigurtë që doni të fshini Consultation Info {{ id }}?"
+      },
+      "detail": {
+        "title": "Consultation Info"
+      },
+      "height": "Height",
+      "weight": "Weight",
+      "age": "Age",
+      "symptoms": "Symptoms"
+    }
+  }
+}
