@@ -118,7 +118,9 @@ public class AppointmentCommandResource {
 	@PostMapping("/initiateAppointment")
 	public CommandResource initiateAppointment(@RequestBody AppointmentRequest appointementRequest) {
 		log.info("Initiating Appointment +++++ " + appointementRequest);
-		return appointmentCommandService.initiateAppointment(appointementRequest);
+		CommandResource resource=appointmentCommandService.initiateAppointment(appointementRequest);
+		log.info("Resource is $$$$$$$ \n"+resource);
+		return resource;
 	}
 
 	@PostMapping("/chooseDoctor/{taskId}")
