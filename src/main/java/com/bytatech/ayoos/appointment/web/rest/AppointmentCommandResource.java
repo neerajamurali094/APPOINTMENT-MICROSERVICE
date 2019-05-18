@@ -9,6 +9,7 @@ import java.util.HashSet;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -116,11 +117,11 @@ public class AppointmentCommandResource {
 	}
 
 	@PostMapping("/initiateAppointment")
-	public CommandResource initiateAppointment(@RequestBody AppointmentRequest appointementRequest) {
+	public ResponseEntity<CommandResource> initiateAppointment(@RequestBody AppointmentRequest appointementRequest) {
 		log.info("Initiating Appointment +++++ " + appointementRequest);
 		CommandResource resource=appointmentCommandService.initiateAppointment(appointementRequest);
 		log.info("Resource is $$$$$$$ \n"+resource);
-		return resource;
+		return new ResponseEntity<CommandResource>(resource, HttpStatus.OK);
 	}
 
 	@PostMapping("/chooseDoctor/{taskId}")
