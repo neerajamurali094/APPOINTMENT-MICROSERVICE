@@ -75,7 +75,7 @@ public interface DoctorResourceApi {
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
-    @RequestMapping(value = "/api/doctors/{doctorId}",
+    @RequestMapping(value = "/api/doctor/{doctorId}",
         produces = "*/*", 
         method = RequestMethod.GET)
     ResponseEntity<DoctorDTO> getDoctorByDoctorIdUsingGET(@ApiParam(value = "doctorId",required=true) @PathVariable("doctorId") String doctorId);
