@@ -31,6 +31,9 @@ import com.bytatech.ayoos.appointment.client.bpmn.model.appointment.PaymentInfo;
 import com.bytatech.ayoos.appointment.client.bpmn.model.appointment.ProcessPayment;
 import com.bytatech.ayoos.appointment.client.bpmn.model.appointment.Settings;
 import com.bytatech.ayoos.appointment.client.bpmn.model.appointment.Slot;
+import com.bytatech.ayoos.appointment.client.doctor.api.DoctorResourceApi;
+import com.bytatech.ayoos.appointment.client.doctor.model.DoctorAggregateDTO;
+import com.bytatech.ayoos.appointment.client.doctor.model.DoctorDTO;
 import com.bytatech.ayoos.appointment.config.MessageBindersConfiguration;
 import com.bytatech.ayoos.appointment.client.bpmn.model.appointment.ConsultationDetails;
 import com.bytatech.ayoos.appointment.domain.Appointment;
@@ -42,8 +45,6 @@ import com.bytatech.ayoos.appointment.security.SecurityUtils;
 import com.bytatech.ayoos.appointment.service.dto.AppointmentDTO;
 import com.bytatech.ayoos.appointment.service.dto.UserDTO;
 import com.bytatech.ayoos.appointment.service.mapper.AppointmentMapper;
-import com.diviso.appointment.client.doctor.api.DoctorResourceApi;
-import com.diviso.appointment.client.doctor.model.DoctorDTO;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -262,7 +263,7 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 	public DoctorInfo TestgetDoctorDetails(String doctorId) {
 		// Rest call to get doctor service for Details here
 		
-		DoctorDTO doctorDTO=doctorApi.getDoctorByDoctorIdUsingGET(doctorId).getBody();
+		DoctorAggregateDTO doctorDTO=doctorApi.getDoctorByDoctorIdUsingGET(doctorId).getBody();
 		
 		
 		DoctorInfo doctorInfo = new DoctorInfo();
@@ -272,18 +273,18 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 		doctorInfo.setDoctorId(doctorId);
 
 		PaymentInfo paymentInfo = new PaymentInfo();
-		paymentInfo.setAmount(60d);
-		paymentInfo.setCurrency("INR");
-		paymentInfo.setNote_to_payer("hai thank you for choosing our service");
+		paymentInfo.setAmount(doctorDTO.getPaymentSettings().getAmount());
+		paymentInfo.setCurrency(doctorDTO.getPaymentSettings().getCurrency());
+		paymentInfo.setNote_to_payer(doctorDTO.getPaymentSettings().getNoteToPayer());
 		paymentInfo.setPaymentGatewayCredentials("abilash.s-facilitator@lxisoft.com");
 		paymentInfo.setPaymentGatewayProvider("paypal");
 		paymentInfo.setPaymentMethod("paypal");
-		paymentInfo.setIsPaymentEnabled(true);
+		paymentInfo.setIsPaymentEnabled(doctorDTO.getPaymentSettings().isIsPaymentEnabled());
 
 		Settings settings = new Settings();
-		settings.setApprovalType("manual");
-		settings.setIsMailNotificationsEnabled(true);
-		settings.setIsSMSNotificationsEnabled(true);
+		settings.setApprovalType(doctorDTO.getDoctorSettings().getApprovalType());
+		settings.setIsMailNotificationsEnabled(doctorDTO.getDoctorSettings().isIsMailNotificationsEnabled());
+		settings.setIsSMSNotificationsEnabled(doctorDTO.getDoctorSettings().isIsSMSNotificationsEnabled());
 		settings.setPaymentSettings(paymentInfo);
 		doctorInfo.setSettings(settings);
 		return doctorInfo;
