@@ -19,10 +19,10 @@ import com.bytatech.ayoos.appointment.client.bpmn.model.appointment.PaymentConfi
 import com.bytatech.ayoos.appointment.client.bpmn.model.appointment.ProcessPayment;
 import com.bytatech.ayoos.appointment.client.bpmn.model.appointment.Slot;
 import com.bytatech.ayoos.appointment.client.bpmn.util.BPMUtils;
-import com.bytatech.ayoos.appointment.resource.CommandResource;
 import com.bytatech.ayoos.appointment.service.AppointmentQueryService;
 import com.bytatech.ayoos.appointment.web.rest.AppointmentCommandResource;
 import com.bytatech.ayoos.appointment.web.rest.AppointmentQueryResource;
+import com.bytatech.ayoos.appointment.resource.CommandResource;
 
 @Component
 @SuppressWarnings("unchecked")

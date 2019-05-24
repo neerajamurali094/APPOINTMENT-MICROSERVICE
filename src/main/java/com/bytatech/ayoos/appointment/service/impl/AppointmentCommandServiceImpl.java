@@ -39,12 +39,12 @@ import com.bytatech.ayoos.appointment.client.bpmn.model.appointment.Consultation
 import com.bytatech.ayoos.appointment.domain.Appointment;
 import com.bytatech.ayoos.appointment.repository.AppointmentRepository;
 import com.bytatech.ayoos.appointment.repository.search.AppointmentSearchRepository;
-import com.bytatech.ayoos.appointment.resource.CommandResource;
 import com.bytatech.ayoos.appointment.resource.assembler.AppointmentCommandResourceAssembler;
 import com.bytatech.ayoos.appointment.security.SecurityUtils;
 import com.bytatech.ayoos.appointment.service.dto.AppointmentDTO;
 import com.bytatech.ayoos.appointment.service.dto.UserDTO;
 import com.bytatech.ayoos.appointment.service.mapper.AppointmentMapper;
+import com.bytatech.ayoos.appointment.resource.CommandResource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

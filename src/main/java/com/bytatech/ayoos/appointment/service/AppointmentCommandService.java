@@ -10,10 +10,10 @@ import com.bytatech.ayoos.appointment.client.bpmn.model.appointment.PaymentConfi
 import com.bytatech.ayoos.appointment.client.bpmn.model.appointment.ProcessPayment;
 import com.bytatech.ayoos.appointment.client.bpmn.model.appointment.Slot;
 import com.bytatech.ayoos.appointment.domain.Appointment;
-import com.bytatech.ayoos.appointment.resource.CommandResource;
 import com.bytatech.ayoos.appointment.client.bpmn.model.appointment.ConsultationDetails;
 import com.bytatech.ayoos.appointment.client.bpmn.model.appointment.DoctorInfo;
 import com.bytatech.ayoos.appointment.service.dto.AppointmentDTO;
+import com.bytatech.ayoos.appointment.resource.CommandResource;
 
 /**
  * Service Interface for managing Appointment.

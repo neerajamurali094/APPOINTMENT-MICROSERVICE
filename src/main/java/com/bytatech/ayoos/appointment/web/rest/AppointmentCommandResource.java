@@ -34,12 +34,12 @@ import com.bytatech.ayoos.appointment.domain.Appointment;
 import com.bytatech.ayoos.appointment.domain.ConsultationInfo;
 import com.bytatech.ayoos.appointment.domain.Symptom;
 import com.bytatech.ayoos.appointment.domain.Timing;
-import com.bytatech.ayoos.appointment.resource.CommandResource;
 import com.bytatech.ayoos.appointment.service.AppointmentCommandService;
 import com.bytatech.ayoos.appointment.service.dto.AppointmentDTO;
 import com.bytatech.ayoos.appointment.web.rest.errors.BadRequestAlertException;
 import com.bytatech.ayoos.appointment.web.rest.util.HeaderUtil;
 import com.codahale.metrics.annotation.Timed;
+import com.bytatech.ayoos.appointment.resource.CommandResource;
 
 @RestController
 @RequestMapping("/api/command")
