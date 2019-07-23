@@ -9,6 +9,8 @@ import com.bytatech.ayoos.appointment.client.doctor.model.PaymentSettings;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
@@ -52,7 +54,7 @@ public class DoctorAggregateDTO   {
   private Long phoneNumber = null;
 
   @JsonProperty("practiceSince")
-  private OffsetDateTime practiceSince = null;
+  private LocalDate practiceSince = null;
 
   @JsonProperty("registerNumber")
   private String registerNumber = null;
@@ -266,7 +268,7 @@ public class DoctorAggregateDTO   {
     this.phoneNumber = phoneNumber;
   }
 
-  public DoctorAggregateDTO practiceSince(OffsetDateTime practiceSince) {
+  public DoctorAggregateDTO practiceSince(LocalDate practiceSince) {
     this.practiceSince = practiceSince;
     return this;
   }
@@ -279,11 +281,11 @@ public class DoctorAggregateDTO   {
 
   @Valid
 
-  public OffsetDateTime getPracticeSince() {
+  public LocalDate getPracticeSince() {
     return practiceSince;
   }
 
-  public void setPracticeSince(OffsetDateTime practiceSince) {
+  public void setPracticeSince(LocalDate practiceSince) {
     this.practiceSince = practiceSince;
   }
 

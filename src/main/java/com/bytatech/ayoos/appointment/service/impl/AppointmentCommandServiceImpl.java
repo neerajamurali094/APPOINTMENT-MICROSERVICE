@@ -78,7 +78,7 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 
 	private final Logger log = LoggerFactory.getLogger(AppointmentCommandServiceImpl.class);
 
-	private static final String BPM_PROCESSDEFINITION_ID = "booking-prototype-key:7:20326";
+	private static final String BPM_PROCESSDEFINITION_ID = "booking-prototype-key:8:13024";
 
 	@Autowired
 	private DoctorResourceApi doctorApi;
@@ -204,6 +204,7 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 
 		selectSlot(chooseSlotTaskId, appointmentRequest.getSlot());
 		CommandResource commandResource = assembler.toResource(processInstanceId);
+		commandResource.setTrackingId(appointmentDetails.getTrackingID());
 		commandResource.setStatus(taskResponseSlot.getStatusCode().name());
 		return commandResource;
 	}
@@ -560,11 +561,11 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 		log.info("Appointment is " + appointment);
 
 		/* Publishing avro messages to Kafka */
-		Boolean status=publishMessageToKafka(appointment);
+		//Boolean status=publishMessageToKafka(appointment);
 		appointmentRepository.save(appointment);
 		appointmentSearchRepository.save(appointment);
 		CommandResource commandResource = assembler.toResource(processInstanceId);
-		if(response.getStatusCode().name().equalsIgnoreCase("OK")&&status)
+		//if(response.getStatusCode().name().equalsIgnoreCase("OK")&&status)
 		commandResource.setStatus(response.getStatusCode().name());
 		return commandResource;
 	}

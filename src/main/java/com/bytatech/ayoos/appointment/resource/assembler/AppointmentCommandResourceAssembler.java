@@ -42,16 +42,6 @@ public class AppointmentCommandResourceAssembler extends ResourceAssemblerSuppor
 		Link selfLink = linkTo(methodOn(AppointmentQueryResource.class).getAppointmentInfo(processInstanceId))
 				.withSelfRel();
 		appointmentCommandResource.add(selfLink);
-		Link next = createNextRel(processInstanceId);
-		if (next != null) {
-			appointmentCommandResource.add(next);
-		}
-		appointmentCommandResource.add(links);
-		return appointmentCommandResource;
-	}
-
-	private Link createNextRel(String processInstanceId) {
-		Link next = null;
 		List<LinkedHashMap<String, String>> list = ((List<LinkedHashMap<String, String>>) appointmentQueryService
 				.getTasks(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
 						null, null, null, processInstanceId, null, null, null, null, null, null, null, null, null, null,
@@ -62,6 +52,23 @@ public class AppointmentCommandResourceAssembler extends ResourceAssemblerSuppor
 		if (list.size() != 0) {
 			taskId = list.get(0).get("id");
 			taskName = list.get(0).get("name");
+			Link next = createNextRel(taskId, taskName);
+			//links.add(next);
+
+			if (next != null) {
+				appointmentCommandResource.add(next);
+			}
+		}
+		appointmentCommandResource.add(links);
+		appointmentCommandResource.setNextTaskId(taskId);
+		appointmentCommandResource.setTaskName(taskName);
+		return appointmentCommandResource;
+	}
+
+	private Link createNextRel(String taskId,String taskName) {
+		
+		Link next = null;
+		System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% "+taskName+"%%%%%%%%%%%%%%%%%%%%%%%%");
 
 			if (taskName.equals(BPMUtils.CHOOSE_SLOT)) {
 				next = linkTo(methodOn(AppointmentCommandResource.class).selectSlot(taskId, new Slot()))
@@ -72,6 +79,7 @@ public class AppointmentCommandResourceAssembler extends ResourceAssemblerSuppor
 				next = linkTo(methodOn(AppointmentCommandResource.class).chooseDoctor(taskId, new DoctorInfo()))
 						.withRel("next");
 			} else if (taskName.equals(BPMUtils.SEND_APPOINTMENT_REQUEST)) {
+				System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 				next = linkTo(methodOn(AppointmentCommandResource.class).sendAppointmentRequest(taskId,
 						new AppointmentConfirmationRequest())).withRel("next");
 			} else if (taskName.equals(BPMUtils.PROCESS_APPOINTMENT_REQUEST)) {
@@ -92,9 +100,9 @@ public class AppointmentCommandResourceAssembler extends ResourceAssemblerSuppor
 				next = linkTo(methodOn(AppointmentCommandResource.class).collectAdditionalDetails(taskId,
 						new ConsultationDetails())).withRel("next");
 			}
-		}
+		
 
-		return next;
-	}
+	return next;
+}
 
 }

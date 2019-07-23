@@ -81,13 +81,13 @@ spring:
 security:
   oauth2:
     client:
-      access-token-uri: http://35.237.193.86:8080/auth/realms/graeshoppe/protocol/openid-connect/token
-      user-authorization-uri: http://35.237.193.86:8080/auth/realms/graeshoppe/protocol/openid-connect/auth
+      access-token-uri: http://35.196.86.249:8080/auth/realms/ayoos/protocol/openid-connect/token
+      user-authorization-uri: http://35.196.86.249:8080/auth/realms/ayoos/protocol/openid-connect/auth
       client-id: account
-      client-secret: 9dc04b00-55f1-49b5-88fa-21b401e442dd
+      client-secret: 622ccedd-b819-4512-8e43-ee9837088a48
       scope: openid profile email
     resource:
-      user-info-uri: http://35.237.193.86:8080/auth/realms/graeshoppe/protocol/openid-connect/userinfo
+      user-info-uri: http://35.196.86.249:8080/auth/realms/ayoos/protocol/openid-connect/userinfo
 server:
   servlet:
     session:
@@ -114,7 +114,7 @@ jhipster:
     license: null
     license-url: null
 bpm:
-  url: http://35.237.193.86:8070/activiti-rest/service
+  url: http://35.231.249.189:8070/activiti-rest/service
   security:
     basicAuth:
       username: kermit

@@ -7,7 +7,7 @@ public interface MessageBindersConfiguration {
 	
 	String APPOINTMENT="appointment";
 	
-	@Output(APPOINTMENT)
+	//@Output(APPOINTMENT)
 	MessageChannel appointmentOut();
 
 }
