@@ -1,0 +1,93 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.bytatech.ayoos.appointment",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "5.6.1",
+    "applicationType": "microservice",
+    "baseName": "AyoosAppointment",
+    "packageName": "com.bytatech.ayoos.appointment",
+    "packageFolder": "com/bytatech/ayoos/appointment",
+    "serverPort": "8090",
+    "authenticationType": "oauth2",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "elasticsearch",
+    "messageBroker": "kafka",
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NjMwM2U1MWMwZDQwNDU2YWIwMDQ4ODE4MTBjYzZmMWIwN2U2M2ZkMWY5OTYzZjVlYmMyMTFiYzBlZDhiZGNhZTZlNzVkMDIxNzgxYjJmZWIwNGQ0ZDI3ZjZiNGJmNGVjZGFiZGVjNzMwZmQwOTM0ZWU0ZjI4MDQwNWQ3OGNkMWY=",
+    "testFrameworks": [
+      "gatling"
+    ],
+    "jhiPrefix": "jhi",
+    "enableTranslation": true,
+    "clientPackageManager": "npm",
+    "nativeLanguage": "en",
+    "languages": [
+      "en",
+      "al",
+      "ar-ly",
+      "hy",
+      "by",
+      "bn",
+      "ca",
+      "zh-cn",
+      "zh-tw",
+      "cs",
+      "da",
+      "nl",
+      "et",
+      "fa",
+      "fr",
+      "gl",
+      "de",
+      "el",
+      "hi",
+      "hu",
+      "id",
+      "it",
+      "ja",
+      "ko",
+      "mr",
+      "my",
+      "pl",
+      "pt-br",
+      "pt-pt",
+      "ro",
+      "ru",
+      "sk",
+      "sr",
+      "es",
+      "sv",
+      "tr",
+      "ta",
+      "th",
+      "ua",
+      "uz-lat",
+      "vi"
+    ],
+    "skipClient": true,
+    "skipUserManagement": true
+  },
+  "generator-jhipster-swagger-cli": {
+    "apis": {
+      "bpm": {
+        "spec": "/home/abilash-diviso/003-Softwares-Libraries/apache-tomcat-8.5.32/webapps/activiti-rest/docs/activiti.json"
+      },
+      "doctor": {
+        "spec": "http://35.243.137.225:8083/v2/api-docs"
+      }
+    },
+    "promptValues": {
+      "inputSpec": "http://35.243.137.225:8083/v2/api-docs",
+      "cliName": "doctor"
+    }
+  }
+}

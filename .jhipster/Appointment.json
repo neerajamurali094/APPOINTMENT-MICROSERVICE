@@ -1,0 +1,67 @@
+{
+    "name": "Appointment",
+    "fields": [
+        {
+            "fieldName": "trackingId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "appointmentId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "chronicDiseaseRef",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "appointmentDateAndTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "note",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "patientId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "doctorId",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "consultationInfo",
+            "otherEntityName": "consultationInfo",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "appointment"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "timing",
+            "otherEntityName": "timing",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "appointment"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "status",
+            "otherEntityName": "status",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181113072915",
+    "entityTableName": "appointment",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "AyoosAppointment",
+    "applications": "*",
+    "microserviceName": "AyoosAppointment"
+}

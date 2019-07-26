@@ -1,0 +1,31 @@
+{
+    "name": "Symptom",
+    "fields": [
+        {
+            "fieldName": "ref",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numberOfDaysSuffering",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "consultationInfo",
+            "otherEntityName": "consultationInfo",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181113072918",
+    "entityTableName": "symptom",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "AyoosAppointment",
+    "applications": "*",
+    "microserviceName": "AyoosAppointment"
+}

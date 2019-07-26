@@ -1,0 +1,35 @@
+{
+    "name": "ConsultationInfo",
+    "fields": [
+        {
+            "fieldName": "height",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "weight",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "age",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "symptoms",
+            "otherEntityName": "symptom",
+            "otherEntityRelationshipName": "consultationInfo"
+        }
+    ],
+    "changelogDate": "20181203062231",
+    "entityTableName": "consultation_info",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "AyoosAppointment",
+    "applications": "*",
+    "microserviceName": "AyoosAppointment"
+}

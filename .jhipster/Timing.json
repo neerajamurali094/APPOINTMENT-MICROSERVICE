@@ -1,0 +1,28 @@
+{
+    "name": "Timing",
+    "fields": [
+        {
+            "fieldName": "day",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "startFrom",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "endTo",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181113072916",
+    "entityTableName": "timing",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "AyoosAppointment",
+    "applications": "*",
+    "microserviceName": "AyoosAppointment"
+}

@@ -1,0 +1,20 @@
+{
+    "name": "Status",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181113072919",
+    "entityTableName": "status",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "AyoosAppointment",
+    "applications": "*",
+    "microserviceName": "AyoosAppointment"
+}

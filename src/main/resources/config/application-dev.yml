@@ -25,7 +25,7 @@ eureka:
     client:
         service-url:
             defaultZone: https://admin:${jhipster.registry.password}@lxi-registry-server.herokuapp.com/eureka/
-        enabled: true
+        enabled: false
 
 spring:
     profiles:
