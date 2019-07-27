@@ -46,6 +46,7 @@ import com.bytatech.ayoos.appointment.service.dto.AppointmentDTO;
 import com.bytatech.ayoos.appointment.service.dto.TimingDTO;
 import com.bytatech.ayoos.appointment.service.dto.UserDTO;
 import com.bytatech.ayoos.appointment.service.mapper.AppointmentMapper;
+import com.bytatech.ayoos.appointment.web.rest.errors.BadRequestAlertException;
 import com.bytatech.ayoos.appointment.resource.CommandResource;
 
 import org.joda.time.LocalDate;
@@ -103,6 +104,10 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 	private TimingService timingService;
 
 	@Autowired
+	private AppointmentMapper mapper;
+	@Autowired
+	private AppointmentRepository repo;
+	@Autowired
 	private UserService userService;
 
 	@Autowired
@@ -113,7 +118,7 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 
 	@Autowired
 	private TasksApi tasksApi;
-
+	
 	@Autowired
 	private HistoryApi histroyApi;
 
@@ -136,11 +141,11 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 	@Override
 	public AppointmentDTO save(AppointmentDTO appointmentDTO) {
 		log.debug("Request to save Appointment : {}", appointmentDTO);
-
 		Appointment appointment = appointmentMapper.toEntity(appointmentDTO);
 		appointment = appointmentRepository.save(appointment);
 		AppointmentDTO result = appointmentMapper.toDto(appointment);
 		appointmentSearchRepository.save(appointment);
+
 		return result;
 	}
 
@@ -211,6 +216,7 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 		selectSlot(chooseSlotTaskId, appointmentRequest.getSlot());
 		CommandResource commandResource = assembler.toResource(processInstanceId);
 		TimingDTO timingDTO = saveSlot(appointmentRequest.getSlot());
+
 		commandResource.setTrackingId(appointmentDetails.getTrackingID());
 		commandResource.setStatus(taskResponseSlot.getStatusCode().name());
 		AppointmentDTO appointmentDTO = new AppointmentDTO();
@@ -219,21 +225,25 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 		appointmentDTO.setAppointmentDateAndTime(ZonedDateTime.now());
 		appointmentDTO.setPatientId(appointmentDetails.getPatientInfo().getPatientId());
 		appointmentDTO.setTimingId(timingDTO.getId());
-		save(appointmentDTO);
+		log.info("timing id is in impl "+timingDTO.getId());
+		AppointmentDTO result=save(appointmentDTO);
+		AppointmentDTO result2 = save(result);
 		return commandResource;
-	}
 
+	}
+	@SuppressWarnings("deprecation")
 	public TimingDTO saveSlot(Slot slot) {
 		TimingDTO timingDTO = new TimingDTO();
 		timingDTO.setDay(
 				java.time.LocalDate.of(slot.getDay().getYear(), slot.getDay().getMonth(), slot.getDay().getDay()));
-		timingDTO.setStartFrom(ZonedDateTime.of(slot.getStartTime().getYear(), slot.getStartTime().getMonth(),
-				slot.getStartTime().getDay(), slot.getStartTime().getHours(), slot.getStartTime().getMinutes(), 0, 0,
-				null));
-		timingDTO.setEndTo(ZonedDateTime.of(slot.getEndTime().getYear(), slot.getEndTime().getMonth(),
-				slot.getEndTime().getDay(), slot.getEndTime().getHours(), slot.getEndTime().getMinutes(), 0, 0, null));
+		timingDTO.setStartFrom(ZonedDateTime.of(slot.getDay().getYear(), slot.getDay().getMonth(),
+				slot.getDay().getDay(), slot.getStartTime().getHours(), slot.getStartTime().getMinutes(), 0, 0,
+				ZoneId.of("Asia/Kolkata")));
+		timingDTO.setEndTo(ZonedDateTime.of(slot.getDay().getYear(), slot.getDay().getMonth(),
+				slot.getDay().getDay(), slot.getEndTime().getHours(), slot.getEndTime().getMinutes(), 0, 0, ZoneId.of("Asia/Kolkata")));
 		return timingService.save(timingDTO);
 	}
+	
 
 	public AppointmentDetails getAppointmentDetails() {
 		AppointmentDetails appointmentDetails = new AppointmentDetails();

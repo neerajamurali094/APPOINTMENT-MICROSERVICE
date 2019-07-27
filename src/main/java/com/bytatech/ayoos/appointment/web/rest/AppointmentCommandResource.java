@@ -3,12 +3,14 @@ package com.bytatech.ayoos.appointment.web.rest;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.Arrays;
 import java.util.HashSet;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -35,7 +37,9 @@ import com.bytatech.ayoos.appointment.domain.ConsultationInfo;
 import com.bytatech.ayoos.appointment.domain.Symptom;
 import com.bytatech.ayoos.appointment.domain.Timing;
 import com.bytatech.ayoos.appointment.service.AppointmentCommandService;
+import com.bytatech.ayoos.appointment.service.TimingService;
 import com.bytatech.ayoos.appointment.service.dto.AppointmentDTO;
+import com.bytatech.ayoos.appointment.service.dto.TimingDTO;
 import com.bytatech.ayoos.appointment.web.rest.errors.BadRequestAlertException;
 import com.bytatech.ayoos.appointment.web.rest.util.HeaderUtil;
 import com.codahale.metrics.annotation.Timed;
@@ -50,6 +54,9 @@ public class AppointmentCommandResource {
 	private static final String ENTITY_NAME = "ayoosAppointmentAppointment";
 
 	private final AppointmentCommandService appointmentCommandService;
+	
+	@Autowired
+	private TimingService timingService;
 
 	public AppointmentCommandResource(AppointmentCommandService appointmentCommandService) {
 		
@@ -74,8 +81,12 @@ public class AppointmentCommandResource {
 			throw new BadRequestAlertException("A new appointment cannot already have an ID", ENTITY_NAME, "idexists");
 		}
 		AppointmentDTO result = appointmentCommandService.save(appointmentDTO);
-		return ResponseEntity.created(new URI("/api/appointments/" + result.getId()))
-				.headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString())).body(result);
+		if (result.getId() == null) {
+			throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
+		}
+		AppointmentDTO result2 = appointmentCommandService.save(result);
+		return ResponseEntity.created(new URI("/api/appointments/" + result2.getId()))
+				.headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result2.getId().toString())).body(result);
 	}
 
 	/**
@@ -120,10 +131,10 @@ public class AppointmentCommandResource {
 	public ResponseEntity<CommandResource> initiateAppointment(@RequestBody AppointmentRequest appointementRequest) {
 		log.info("Initiating Appointment +++++ " + appointementRequest);
 		CommandResource resource=appointmentCommandService.initiateAppointment(appointementRequest);
-		log.info("Resource is $$$$$$$ \n"+resource);
 		return new ResponseEntity<CommandResource>(resource, HttpStatus.OK);
 	}
 
+	
 	@PostMapping("/chooseDoctor/{taskId}")
 	public CommandResource chooseDoctor(@PathVariable String taskId, @RequestBody DoctorInfo doctorInfo) {
 

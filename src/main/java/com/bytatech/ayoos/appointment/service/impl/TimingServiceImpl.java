@@ -47,12 +47,16 @@ public class TimingServiceImpl implements TimingService {
      * @return the persisted entity
      */
     @Override
+    @Transactional
     public TimingDTO save(TimingDTO timingDTO) {
         log.debug("Request to save Timing : {}", timingDTO);
 
         Timing timing = timingMapper.toEntity(timingDTO);
+        log.info("++++++++++++++++ entity is "+timing);
         timing = timingRepository.save(timing);
+        log.info("++++++++++++++++ entity after saving is "+timing);
         TimingDTO result = timingMapper.toDto(timing);
+        log.info("++++++++++++++++ After dto conversion "+result);
         timingSearchRepository.save(timing);
         return result;
     }
