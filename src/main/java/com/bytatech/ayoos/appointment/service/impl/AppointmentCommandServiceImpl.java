@@ -2,6 +2,7 @@ package com.bytatech.ayoos.appointment.service.impl;
 
 import com.bytatech.ayoos.appointment.service.AppointmentCommandService;
 import com.bytatech.ayoos.appointment.service.AppointmentQueryService;
+import com.bytatech.ayoos.appointment.service.TimingService;
 import com.bytatech.ayoos.appointment.service.UserService;
 import com.bytatech.ayoos.appointment.avro.ConsultationInfo;
 import com.bytatech.ayoos.appointment.avro.Symptom;
@@ -42,10 +43,12 @@ import com.bytatech.ayoos.appointment.repository.search.AppointmentSearchReposit
 import com.bytatech.ayoos.appointment.resource.assembler.AppointmentCommandResourceAssembler;
 import com.bytatech.ayoos.appointment.security.SecurityUtils;
 import com.bytatech.ayoos.appointment.service.dto.AppointmentDTO;
+import com.bytatech.ayoos.appointment.service.dto.TimingDTO;
 import com.bytatech.ayoos.appointment.service.dto.UserDTO;
 import com.bytatech.ayoos.appointment.service.mapper.AppointmentMapper;
 import com.bytatech.ayoos.appointment.resource.CommandResource;
 
+import org.joda.time.LocalDate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,7 +85,7 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 
 	@Autowired
 	private DoctorResourceApi doctorApi;
-	
+
 	@Autowired
 	private AppointmentCommandResourceAssembler assembler;
 
@@ -95,6 +98,9 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 	private final AppointmentSearchRepository appointmentSearchRepository;
 
 	private final AppointmentQueryService queryService;
+
+	@Autowired
+	private TimingService timingService;
 
 	@Autowired
 	private UserService userService;
@@ -204,9 +210,29 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 
 		selectSlot(chooseSlotTaskId, appointmentRequest.getSlot());
 		CommandResource commandResource = assembler.toResource(processInstanceId);
+		TimingDTO timingDTO = saveSlot(appointmentRequest.getSlot());
 		commandResource.setTrackingId(appointmentDetails.getTrackingID());
 		commandResource.setStatus(taskResponseSlot.getStatusCode().name());
+		AppointmentDTO appointmentDTO = new AppointmentDTO();
+		appointmentDTO.setTrackingId(appointmentDetails.getTrackingID());
+		appointmentDTO.setDoctorId(appointmentRequest.getDoctorId());
+		appointmentDTO.setAppointmentDateAndTime(ZonedDateTime.now());
+		appointmentDTO.setPatientId(appointmentDetails.getPatientInfo().getPatientId());
+		appointmentDTO.setTimingId(timingDTO.getId());
+		save(appointmentDTO);
 		return commandResource;
+	}
+
+	public TimingDTO saveSlot(Slot slot) {
+		TimingDTO timingDTO = new TimingDTO();
+		timingDTO.setDay(
+				java.time.LocalDate.of(slot.getDay().getYear(), slot.getDay().getMonth(), slot.getDay().getDay()));
+		timingDTO.setStartFrom(ZonedDateTime.of(slot.getStartTime().getYear(), slot.getStartTime().getMonth(),
+				slot.getStartTime().getDay(), slot.getStartTime().getHours(), slot.getStartTime().getMinutes(), 0, 0,
+				null));
+		timingDTO.setEndTo(ZonedDateTime.of(slot.getEndTime().getYear(), slot.getEndTime().getMonth(),
+				slot.getEndTime().getDay(), slot.getEndTime().getHours(), slot.getEndTime().getMinutes(), 0, 0, null));
+		return timingService.save(timingDTO);
 	}
 
 	public AppointmentDetails getAppointmentDetails() {
@@ -254,19 +280,18 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 
 		taskActionRequest.setVariables(variables);
 		log.info("DoctorInfo " + doctorInfo);
-		String processInstanceId=tasksApi.getTask(taskId).getBody().getProcessInstanceId();
+		String processInstanceId = tasksApi.getTask(taskId).getBody().getProcessInstanceId();
 		CommandResource commandResource = assembler.toResource(processInstanceId);
-		ResponseEntity<Void> response=tasksApi.executeTaskAction(taskId, taskActionRequest);
+		ResponseEntity<Void> response = tasksApi.executeTaskAction(taskId, taskActionRequest);
 		commandResource.setStatus(response.getStatusCode().name());
 		return commandResource;
 	}
 
 	public DoctorInfo TestgetDoctorDetails(String doctorId) {
 		// Rest call to get doctor service for Details here
-		
-		DoctorAggregateDTO doctorDTO=doctorApi.getDoctorByDoctorIdUsingGET(doctorId).getBody();
-		
-		
+
+		DoctorAggregateDTO doctorDTO = doctorApi.getDoctorByDoctorIdUsingGET(doctorId).getBody();
+
 		DoctorInfo doctorInfo = new DoctorInfo();
 		doctorInfo.setEmail(doctorDTO.getEmail());
 		doctorInfo.setPhoneNumber(doctorDTO.getPhoneNumber());
@@ -341,17 +366,17 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 		formProperties.add(endTimeFormProperty);
 
 		formRequest.setProperties(formProperties);
-		String processInstanceId=tasksApi.getTask(taskId).getBody().getProcessInstanceId();
+		String processInstanceId = tasksApi.getTask(taskId).getBody().getProcessInstanceId();
 		CommandResource commandResource = assembler.toResource(processInstanceId);
-		ResponseEntity<ProcessInstanceResponse> response=formsApi.submitForm(formRequest);
+		ResponseEntity<ProcessInstanceResponse> response = formsApi.submitForm(formRequest);
 		commandResource.setStatus(response.getStatusCode().name());
 		return commandResource;
 	}
 
 	@Override
 	public CommandResource confirmRegistration(String taskId) {
-		String processInstanceId=tasksApi.getTask(taskId).getBody().getProcessInstanceId();
-		ResponseEntity<Void> response=null;
+		String processInstanceId = tasksApi.getTask(taskId).getBody().getProcessInstanceId();
+		ResponseEntity<Void> response = null;
 		UserDTO currentUser = null;
 		if (SecurityContextHolder.getContext().getAuthentication() instanceof OAuth2Authentication) {
 			currentUser = userService.getUserFromAuthentication(
@@ -364,7 +389,7 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 			taskActionRequest.setVariables(variables);
 			ResponseEntity<TaskResponse> taskReposponse = queryService.getTask(taskId);
 			updatePatientInfo(getPatientDetails(currentUser), taskReposponse.getBody().getProcessInstanceId()); // refactor
-			response=tasksApi.executeTaskAction(taskId, taskActionRequest);
+			response = tasksApi.executeTaskAction(taskId, taskActionRequest);
 		} else {
 			log.info("The user is not registered");
 		}
@@ -395,7 +420,7 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 	@Override
 	public CommandResource sendAppointmentRequest(String taskId,
 			AppointmentConfirmationRequest appointmentConfirmationRequest) {
-		String processInstanceId=tasksApi.getTask(taskId).getBody().getProcessInstanceId();
+		String processInstanceId = tasksApi.getTask(taskId).getBody().getProcessInstanceId();
 
 		List<RestFormProperty> formProperties = new ArrayList<RestFormProperty>();
 		SubmitFormRequest formRequest = new SubmitFormRequest();
@@ -412,7 +437,7 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 		requestConfirmationProperty.setValue(appointmentConfirmationRequest.getRequestConfirmation());
 		formProperties.add(requestConfirmationProperty);
 		formRequest.setProperties(formProperties);
-		ResponseEntity<ProcessInstanceResponse> response=formsApi.submitForm(formRequest);
+		ResponseEntity<ProcessInstanceResponse> response = formsApi.submitForm(formRequest);
 		CommandResource commandResource = assembler.toResource(processInstanceId);
 		commandResource.setStatus(response.getStatusCode().name());
 		return commandResource;
@@ -421,7 +446,7 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 	@Override
 	public CommandResource processAppointmentRequest(String taskId,
 			AppointmentConfirmationResponse appointmentConfirmationResponse) {
-		String processInstanceId=tasksApi.getTask(taskId).getBody().getProcessInstanceId();
+		String processInstanceId = tasksApi.getTask(taskId).getBody().getProcessInstanceId();
 
 		List<RestFormProperty> formProperties = new ArrayList<RestFormProperty>();
 		SubmitFormRequest formRequest = new SubmitFormRequest();
@@ -456,7 +481,7 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 		formProperties.add(messageProperty);
 
 		formRequest.setProperties(formProperties);
-		ResponseEntity<ProcessInstanceResponse> response=formsApi.submitForm(formRequest);
+		ResponseEntity<ProcessInstanceResponse> response = formsApi.submitForm(formRequest);
 		CommandResource commandResource = assembler.toResource(processInstanceId);
 		commandResource.setStatus(response.getStatusCode().name());
 		return commandResource;
@@ -465,7 +490,7 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 
 	@Override
 	public CommandResource confirmPayment(String taskId, PaymentConfirmationRequest paymentConfirmationRequest) {
-		String processInstanceId=tasksApi.getTask(taskId).getBody().getProcessInstanceId();
+		String processInstanceId = tasksApi.getTask(taskId).getBody().getProcessInstanceId();
 
 		List<RestFormProperty> formProperties = new ArrayList<RestFormProperty>();
 		SubmitFormRequest formRequest = new SubmitFormRequest();
@@ -481,7 +506,7 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 		paymentDecisionProperty.setValue(paymentConfirmationRequest.getPaymentDecision());
 		formProperties.add(paymentDecisionProperty);
 		formRequest.setProperties(formProperties);
-		ResponseEntity<ProcessInstanceResponse> response=formsApi.submitForm(formRequest);
+		ResponseEntity<ProcessInstanceResponse> response = formsApi.submitForm(formRequest);
 		CommandResource commandResource = assembler.toResource(processInstanceId);
 		commandResource.setStatus(response.getStatusCode().name());
 		return commandResource;
@@ -489,7 +514,7 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 
 	@Override
 	public CommandResource processPayment(String taskId, ProcessPayment processPayment) {
-		String processInstanceId=tasksApi.getTask(taskId).getBody().getProcessInstanceId();
+		String processInstanceId = tasksApi.getTask(taskId).getBody().getProcessInstanceId();
 
 		List<RestFormProperty> formProperties = new ArrayList<RestFormProperty>();
 		SubmitFormRequest formRequest = new SubmitFormRequest();
@@ -505,7 +530,7 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 		paymentStatusProperty.setValue(processPayment.getPaymentStatus());
 		formProperties.add(paymentStatusProperty);
 		formRequest.setProperties(formProperties);
-		ResponseEntity<ProcessInstanceResponse> response=formsApi.submitForm(formRequest);
+		ResponseEntity<ProcessInstanceResponse> response = formsApi.submitForm(formRequest);
 		CommandResource commandResource = assembler.toResource(processInstanceId);
 		commandResource.setStatus(response.getStatusCode().name());
 		return commandResource;
@@ -514,7 +539,7 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 	@Override
 	public CommandResource additionalInformationRequest(String taskId,
 			AdditionalInformationRequest additionalInformationRequest) {
-		String processInstanceId=tasksApi.getTask(taskId).getBody().getProcessInstanceId();
+		String processInstanceId = tasksApi.getTask(taskId).getBody().getProcessInstanceId();
 
 		List<RestFormProperty> formProperties = new ArrayList<RestFormProperty>();
 		SubmitFormRequest formRequest = new SubmitFormRequest();
@@ -530,7 +555,7 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 		decisionProperty.setValue(additionalInformationRequest.getDecision());
 		formProperties.add(decisionProperty);
 		formRequest.setProperties(formProperties);
-		ResponseEntity<ProcessInstanceResponse> response=formsApi.submitForm(formRequest);
+		ResponseEntity<ProcessInstanceResponse> response = formsApi.submitForm(formRequest);
 		CommandResource commandResource = assembler.toResource(processInstanceId);
 		commandResource.setStatus(response.getStatusCode().name());
 		return commandResource;
@@ -538,7 +563,7 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 
 	@Override
 	public CommandResource collectAdditionalDetails(String taskId, ConsultationDetails consultationDetails) {
-		String processInstanceId=tasksApi.getTask(taskId).getBody().getProcessInstanceId();
+		String processInstanceId = tasksApi.getTask(taskId).getBody().getProcessInstanceId();
 
 		TaskActionRequest taskActionRequest = new TaskActionRequest();
 		taskActionRequest.setAction("complete");
@@ -551,7 +576,7 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 		variables.add(symptomDetailsVariable);
 		taskActionRequest.setVariables(variables);
 		log.info("SymptomsList " + symptomDetailsVariable);
-		ResponseEntity<Void> response=tasksApi.executeTaskAction(taskId, taskActionRequest);
+		ResponseEntity<Void> response = tasksApi.executeTaskAction(taskId, taskActionRequest);
 		ResponseEntity<DataResponse> taskReponse = histroyApi.listHistoricTaskInstances(taskId, null, null, null, null,
 				null, null, null, null, null, null, "Collect Informations", null, null, null, null, null, null, null,
 				null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
@@ -561,11 +586,11 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 		log.info("Appointment is " + appointment);
 
 		/* Publishing avro messages to Kafka */
-		//Boolean status=publishMessageToKafka(appointment);
+		// Boolean status=publishMessageToKafka(appointment);
 		appointmentRepository.save(appointment);
 		appointmentSearchRepository.save(appointment);
 		CommandResource commandResource = assembler.toResource(processInstanceId);
-		//if(response.getStatusCode().name().equalsIgnoreCase("OK")&&status)
+		// if(response.getStatusCode().name().equalsIgnoreCase("OK")&&status)
 		commandResource.setStatus(response.getStatusCode().name());
 		return commandResource;
 	}
