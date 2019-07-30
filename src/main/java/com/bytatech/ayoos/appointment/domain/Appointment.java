@@ -48,13 +48,13 @@ public class Appointment implements Serializable {
     @Column(name = "doctor_id")
     private String doctorId;
 
-    @OneToOne(cascade=CascadeType.PERSIST)    @JoinColumn(unique = true)
+	@OneToOne(/* cascade=CascadeType.PERSIST */)    @JoinColumn(unique = true)
     private ConsultationInfo consultationInfo;
 
 	@OneToOne(/* cascade=CascadeType.PERSIST */)    @JoinColumn(unique = true)
     private Timing timing;
 
-    @ManyToOne(cascade=CascadeType.PERSIST) 
+	@ManyToOne(/* cascade=CascadeType.PERSIST */) 
     @JsonIgnoreProperties("")
     private Status status;
 

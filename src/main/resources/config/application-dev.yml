@@ -63,8 +63,8 @@ spring:
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:mysql://localhost:3306/AyoosAppointment?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false
-        username: root
-        password: root
+        username: user
+        password: password
         hikari:
             auto-commit: false
             data-source-properties:

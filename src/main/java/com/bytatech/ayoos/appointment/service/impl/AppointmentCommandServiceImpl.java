@@ -224,6 +224,7 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 		appointmentDTO.setDoctorId(appointmentRequest.getDoctorId());
 		appointmentDTO.setAppointmentDateAndTime(ZonedDateTime.now());
 		appointmentDTO.setPatientId(appointmentDetails.getPatientInfo().getPatientId());
+		appointmentDTO.setStatusId(1l);
 		appointmentDTO.setTimingId(timingDTO.getId());
 		log.info("timing id is in impl "+timingDTO.getId());
 		AppointmentDTO result=save(appointmentDTO);
@@ -587,18 +588,22 @@ public class AppointmentCommandServiceImpl implements AppointmentCommandService 
 		taskActionRequest.setVariables(variables);
 		log.info("SymptomsList " + symptomDetailsVariable);
 		ResponseEntity<Void> response = tasksApi.executeTaskAction(taskId, taskActionRequest);
-		ResponseEntity<DataResponse> taskReponse = histroyApi.listHistoricTaskInstances(taskId, null, null, null, null,
-				null, null, null, null, null, null, "Collect Informations", null, null, null, null, null, null, null,
-				null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
-				null, null, null, null, null, null);
-		List<LinkedHashMap<String, String>> map = (List<LinkedHashMap<String, String>>) taskReponse.getBody().getData();
-		Appointment appointment = queryService.getCompletedAppointment(map.get(0).get("processInstanceId"));
-		log.info("Appointment is " + appointment);
+		/*
+		 * ResponseEntity<DataResponse> taskReponse =
+		 * histroyApi.listHistoricTaskInstances(taskId, null, null, null, null, null,
+		 * null, null, null, null, null, "Collect Informations", null, null, null, null,
+		 * null, null, null, null, null, null, null, null, null, null, null, null, null,
+		 * null, null, null, null, null, null, null, null, null, null, null, null,
+		 * null); List<LinkedHashMap<String, String>> map = (List<LinkedHashMap<String,
+		 * String>>) taskReponse.getBody().getData(); Appointment appointment =
+		 * queryService.getCompletedAppointment(map.get(0).get("processInstanceId"));
+		 * log.info("Appointment is " + appointment);
+		 */
 
 		/* Publishing avro messages to Kafka */
 		// Boolean status=publishMessageToKafka(appointment);
-		appointmentRepository.save(appointment);
-		appointmentSearchRepository.save(appointment);
+		//appointmentRepository.save(appointment);
+		//appointmentSearchRepository.save(appointment);
 		CommandResource commandResource = assembler.toResource(processInstanceId);
 		// if(response.getStatusCode().name().equalsIgnoreCase("OK")&&status)
 		commandResource.setStatus(response.getStatusCode().name());
