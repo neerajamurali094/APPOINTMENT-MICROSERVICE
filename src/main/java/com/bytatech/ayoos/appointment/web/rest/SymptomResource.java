@@ -58,8 +58,12 @@ public class SymptomResource {
             throw new BadRequestAlertException("A new symptom cannot already have an ID", ENTITY_NAME, "idexists");
         }
         SymptomDTO result = symptomService.save(symptomDTO);
-        return ResponseEntity.created(new URI("/api/symptoms/" + result.getId()))
-            .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
+        if (result.getId() == null) {
+			throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
+		}
+        SymptomDTO result1 = symptomService.save(result);
+        return ResponseEntity.created(new URI("/api/symptoms/" + result1.getId()))
+            .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result1.getId().toString()))
             .body(result);
     }
 
