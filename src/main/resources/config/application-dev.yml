@@ -45,8 +45,8 @@ spring:
         stream:
             kafka:
                 binder:
-                    brokers: 35.225.189.219  
-                    zk-nodes: 35.225.189.219 
+                    brokers: dev.servers.divisosofttech.com  
+                    zk-nodes: dev.servers.divisosofttech.com
                     configuration:
                       key.serializer: org.apache.kafka.common.serialization.ByteArraySerializer
                       value.serializer: com.bytatech.ayoos.appointment.config.SerdeConfig      
@@ -59,7 +59,7 @@ spring:
                     destination: appointment
                     contentType: application/*+avro
             schemaRegistryClient:
-              endpoint: http://35.225.189.219:8081
+              endpoint: http://dev.servers.divisosofttech.com:8081
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:mysql://localhost:3306/AyoosAppointment?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false
@@ -88,15 +88,17 @@ spring:
             hibernate.cache.hazelcast.use_lite_member: true
     data:
         elasticsearch:
-           cluster-name: elasticsearch
-           cluster-nodes: http://34.68.17.132:9200
+           cluster-name: c183d0af75ca45b5bb3f07c7da39b72f
+           cluster-nodes: https://c183d0af75ca45b5bb3f07c7da39b72f.us-central1.gcp.cloud.es.io:9243/
            properties:
                path:
                    logs: target/elasticsearch/log
                    data: target/elasticsearch/data
         jest:
+           password: QVFWtiz7v8lWfScvhXYnyDPg
+           username: elastic
            readTimeout: 10000
-           uri: http://34.68.17.132:9200 
+           uri: https://c183d0af75ca45b5bb3f07c7da39b72f.us-central1.gcp.cloud.es.io:9243/ 
     liquibase:
         contexts: dev
     mail:

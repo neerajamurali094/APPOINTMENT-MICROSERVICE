@@ -114,7 +114,7 @@ jhipster:
     license: null
     license-url: null
 bpm:
-  url: http://35.231.249.189:8070/activiti-rest/service
+  url: http://34.74.192.113:8080/activiti-rest/service
   security:
     basicAuth:
       username: kermit
